@@ -10,8 +10,8 @@ This page contains instructions and code for producing a company graph from [Wik
 
 **Step 2.** Use the [wdtaxonomy](https://wdtaxonomy.readthedocs.io/en/latest/) tool to identify relevant types of entities (i.e., taxonomy classes). The selected ones are shown in the following table:
 
-Entity Type | Wikidata Taxonomy ID | Include Descendants
-| --- | --- | --- | --- |
+| Entity Type | Wikidata Taxonomy ID | Include Descendants |
+| --- | --- | --- |
 | Country | Q6256 (Country) | No |
 | Grant | Q230788 (Grant) | Yes |
 | Group | Q16887380 (Group) | No |
