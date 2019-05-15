@@ -16,18 +16,18 @@ class WikidataCleaner():
                        'P571':  'time'}
 
         self.datasets = {"country": {"claims":  [],  "header":  ""},
-                         "human": {"claims": ['P21', 'P106', 'P1559', 'P569',
-                                              'P2021', 'P27', 'P19', 'P463',
-                                              'P166'],
-                                   "header":  ", Gender, Occupation, Name, "
-                                              "Date_of_Birth, Erdos_Number, "
-                                              "Citizenship, Place_of_Birth, "
-                                              "Member_of, Received_Grant"},
+                         "person": {"claims": ['P21', 'P106', 'P1559', 'P569',
+                                               'P2021', 'P27', 'P19', 'P463',
+                                               'P166'],
+                                    "header":  ",gender,occupation,name,"
+                                               "date_of_birth,erdos_number,"
+                                               "CITIZENSHIP,PLACE_OF_BIRTH,"
+                                               "MEMBER_OF,RECEIVED_GRANT"},
                          "grant": {"claims":  [],  "header":  ""},
                          "market": {"claims":  [],  "header":  ""},
-                         "trading_venue": {"claims":  [],  "header":  ""},
+                         "tradingvenue": {"claims":  [],  "header":  ""},
                          "industry": {"claims":  [],  "header":  ""},
-                         "groups": {"claims":  [],  "header":  ""},
+                         "group": {"claims":  [],  "header":  ""},
                          "organizations": {"claims": ['P571', 'P856', 'P1448',
                                                       'P1128', 'P2139',
                                                       'P2295', 'P2403',
@@ -40,32 +40,32 @@ class WikidataCleaner():
                                                       'P463', 'P1889', 'P1366',
                                                       'P1365', 'P166', 'P17',
                                                       'P740', 'P281', 'P1056'],
-                                           "header": ", Inception,"
-                                                     "Official_website,"
-                                                     "Official_name,Employees,"
-                                                     "Total_revenue,"
-                                                     "Net_profit,"
-                                                     "Total_assets,"
-                                                     "Operating_income,"
-                                                     "Phone_number,E_mail,"
-                                                     "Latitude,Longitude,"
-                                                     "Address,Founded_by,"
-                                                     "Chief_executive_officer,"
-                                                     "Director,Chairperson,"
-                                                     "Board_member,"
-                                                     "In_stock_exchange,"
-                                                     "Part_of,"
-                                                     "In_industry,Owner_of,"
-                                                     "Owned_by,"
-                                                     "Parent_organization,"
-                                                     "Subsidiary,Member_of,"
-                                                     "Different_from,"
-                                                     "Replaced_by,Replaces,"
-                                                     "Received_grant,Country,"
-                                                     "Location_of_formation, "
-                                                     "Postal_code,Produces"},
-                         "products": {"claims":  ['P571', 'P275'],
-                                      "header":  ", Inception, License"},
+                                           "header": ",inception,"
+                                                     "official_website,"
+                                                     "official_name,employees,"
+                                                     "total_revenue,"
+                                                     "net_profit,"
+                                                     "total_assets,"
+                                                     "operating_income,"
+                                                     "phone_number,e_mail,"
+                                                     "latitude,longitude,"
+                                                     "address,FOUNDED_BY,"
+                                                     "CHIEF_EXECUTIVE_OFFICER,"
+                                                     "DIRECTOR,CHAIRPERSON,"
+                                                     "BOARD_MEMBER,"
+                                                     "IN_STOCK_EXCHANGE,"
+                                                     "PART_OF,"
+                                                     "IN_INDUSTRY,OWNER_OF,"
+                                                     "OWNED_BY,"
+                                                     "PARENT_ORGANIZATION,"
+                                                     "SUBSIDIARY,MEMBER_OF,"
+                                                     "DIFFERENT_FROM,"
+                                                     "REPLACED_BY,REPLACES,"
+                                                     "RECEIVED_GRANT,COUNTRY,"
+                                                     "LOCATION_OF_FORMATION,"
+                                                     "postal_code,PRODUCES"},
+                         "product": {"claims":  ['P571', 'P275'],
+                                      "header":  ",inception,license"},
                          }
 
         if not isinstance(files,  dict):
@@ -73,10 +73,11 @@ class WikidataCleaner():
                              "files")
         for key in files.keys():
             if key not in self.datasets.keys():
-                raise ValueError("Not a valid Entity. Please choose one of the"
-                                 " following: \n -country\n -human\n -grant\n "
-                                 "-market\n -trading_venue\n -industry\n "
-                                 "-groups\n -organizations\n -products\n")
+                raise ValueError(key + " is not a valid Entity. "
+                                 " Please choose one of the"
+                                 " following: \n -country\n -person\n -grant\n"
+                                 " -market\n -tradingvenue\n -industry\n"
+                                 " -group\n -organizations\n -product\n")
 
         self.files = files
 
@@ -87,18 +88,18 @@ class WikidataCleaner():
             print("Cleaning ", dataset)
 
             with open(self.files[dataset],  'r') as f:
-                with open("{}_{}{}".format(os.path.splitext(
-                        self.files[dataset])[0], "filtered",
-                        os.path.splitext(self.files[dataset])[1]),  'w') as f2:
+                dest_file = self.files[dataset].replace('filtered', 'cleaned')
+                if self.files[dataset] == dest_file:
+                    dest_file = self.files[dataset].replace('.', '_cleaned.')
+                with open(dest_file,  'w') as f2:
                     f2.write(
-                            "ID,Label,Aliases,Descriptions,Labels{}\n".format(
+                            "id,label,aliases,descriptions,labels{}\n".format(
                                     self.datasets[dataset]["header"]))
                     j_line = f.readline()
                     while j_line != "":
-
                         no_lines += 1
                         if no_lines % 10000 == 0:
-                            print("\tLine {: , }".format(no_lines))
+                            print("\tLine {:,}".format(no_lines))
                         line = json.loads(j_line[: -2])
 
                         label = ""
@@ -137,7 +138,7 @@ class WikidataCleaner():
                                 labels))
 
                         for claim_code in self.datasets[dataset]["claims"]:
-                            f2.write(", ")
+                            f2.write(",")
                             if claim_code in line["claims"].keys():
                                 if claim_code in ['P856', 'P281', 'P1329',
                                                   'P968']:
@@ -154,7 +155,7 @@ class WikidataCleaner():
                                                 line["claims"][claim_code]
                                                 [0]['mainsnak']
                                                 ['datavalue']['value']
-                                                ['latitude'])+'\", \"'+str(
+                                                ['latitude'])+'\",\"'+str(
                                                 line["claims"][claim_code][0]
                                                 ['mainsnak']['datavalue']
                                                 ['value']['longitude'])+'\"'
@@ -183,6 +184,6 @@ class WikidataCleaner():
                                 f2.write(output)
                             else:
                                 if claim_code in ['P625']:
-                                    f2.write(", ")
+                                    f2.write(",")
                         f2.write("\n")
                         j_line = f.readline()

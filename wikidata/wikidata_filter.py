@@ -7,7 +7,7 @@ from time import time
 class WikidataFilter():
 
     def __init__(self, choice="id", files=[],
-                 source='../data/latest-all.json.gz'):
+                 source='./data/latest-all.json.gz'):
         self.choice = choice
         self.source = source
 
@@ -39,7 +39,10 @@ class WikidataFilter():
         self.store.Found = 0
 
     def filter_line(self, line):
-        line = json.loads(line)
+        try:
+            line = json.loads(line)
+        except ValueError:
+            return False
         if self.choice == "type":
             if "P31" in line["claims"].keys():
                 line = set([snak["mainsnak"]["datavalue"]["value"]["id"]
@@ -89,7 +92,6 @@ class WikidataFilter():
                 return
             t2 = time()
             print("\t\tTime elapsed: {:,} sec".format(t2-t1))
-            break
 
     def breaker(self, lines):
         bools = []
