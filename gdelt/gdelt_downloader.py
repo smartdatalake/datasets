@@ -27,20 +27,18 @@ class Downloader():
 
     def read_data(self, path, chunksize):
         self.df = pd.read_csv(path, sep='\t', names=self.names,
-                              chunksize=chunksize, encoding="ISO-8859-1")
+                              usecols=self.sel_names, chunksize=chunksize,
+                              encoding="ISO-8859-1")
         return self.df
 
-    def clean_chunk(self, chunk):
-        return chunk[self.sel_names]
-
-    def _download_data(self):
+    def download_data(self):
 
         for i, url in enumerate(self.links):
             zipfile = ZipFile(BytesIO(urlopen(url).read()))
             try:
                 df = pd.read_csv(zipfile.open(zipfile.namelist()[0]),
                                  sep='\t', names=self.names,
-                                 encoding='ISO-8859-1')
+                                 usecols=self.sel_names, encoding='ISO-8859-1')
             except UnicodeDecodeError:
                 continue
 
@@ -51,6 +49,5 @@ class Downloader():
                                              df.shape[0], self.df.shape[0]))
         return self.df
 
-    def _write_data(self, path):
+    def write_data(self, path):
         self.df.to_csv(path, header=True, index=False)
-

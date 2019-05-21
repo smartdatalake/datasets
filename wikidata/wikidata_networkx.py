@@ -1,7 +1,7 @@
 import pandas as pd
 import networkx as nx
 from collections import Counter
-
+import re
 
 def isNaN(s):
     return s != s
@@ -54,26 +54,26 @@ class NetworkxImporter():
                                     "files": ['country_cleaned.txt']}
                         }
 
-    def get_unlabeled_nodes_ids(self, node):
+    def __get_unlabeled_nodes_ids(self, node):
         return set([self.graph.nodes[key]['id'] for key in self.graph.nodes()
                     if self.graph.nodes[key]['nlabel'] == node
                     and 'label' not in self.graph.nodes[key].keys()
                     and 'source' in self.graph.nodes[key].keys()
                     and self.graph.nodes[key]['source'] == 'Wikidata'])
 
-    def get_nodes_ids(self, attribute, value):
+    def __get_nodes_ids(self, attribute, value):
         return set([self.graph.nodes[key]['id'] for key in self.graph.nodes()
                     if attribute in self.graph.nodes[key].keys()
                     and self.graph.nodes[key][attribute] == value
                     and 'source' in self.graph.nodes[key].keys()
                     and self.graph.nodes[key]['source'] == 'Wikidata'])
 
-    def get_edges_ids(self, attribute, value):
+    def __get_edges_ids(self, attribute, value):
         return [key for key in self.graph.edges()
                 if self.graph.edge[key][attribute] == value
                 and self.graph.edges[key]['source'] == 'Wikidata']
 
-    def get_unlabeled_nodes_statistics(self, val, choice=0):
+    def __get_unlabeled_nodes_statistics(self, val, choice=0):
         if choice == 0:
             self.no_nodes = Counter([self.graph.nodes[key]['nlabel']
                                     for key in self.graph.nodes.keys()
@@ -86,7 +86,7 @@ class NetworkxImporter():
                                     'Wikidata'])
         return self.no_nodes[val]
 
-    def get_nodes_statistics(self, val, choice=0):
+    def __get_nodes_statistics(self, val, choice=0):
         if choice == 0:
             self.no_nodes = Counter([self.graph.nodes[key]['nlabel']
                                     for key in self.graph.nodes.keys()
@@ -97,7 +97,7 @@ class NetworkxImporter():
                                     'Wikidata'])
         return self.no_nodes[val]
 
-    def get_edges_statistics(self, val, _from=None, _to=None, choice=0):
+    def __get_edges_statistics(self, val, _from=None, _to=None, choice=0):
         if choice == 0:
             self.no_edges = Counter(["{}_{}_{}".format(
                                 self.graph.edges[edge]['elabel'],
@@ -110,17 +110,17 @@ class NetworkxImporter():
                                 'Wikidata'])
         return self.no_edges["{}_{}_{}".format(val, _from, _to)]
 
-    def get_nodes_values(self, attr):
+    def __get_nodes_values(self, attr):
         return set([self.graph.nodes[node][attr]
                     for node in self.graph.nodes()])
 
-    def get_edges_values(self, attr):
+    def __get_edges_values(self, attr):
         return set([(self.graph.edges[edge][attr],
                      self.graph.nodes[edge[0]]['nlabel'],
                      self.graph.nodes[edge[1]]['nlabel'])
                     for edge in self.graph.edges.keys()])
 
-    def _create_companies(self, df):
+    def create_companies(self, df):
         print("\t\tCreating nodes for Organizations")
         for index, row in df.iterrows():
             self.graph.add_node("WD_Org_{}".format(index),
@@ -151,9 +151,9 @@ class NetworkxImporter():
                                         })])
 
         for node in self.o_nodes.keys():
-            self._create_node(df, "Organization", node)
+            self.__create_node(df, "Organization", node)
 
-    def _create_node(self, df, source, target):
+    def __create_node(self, df, source, target):
         print("\t\tCreating Nodes & Relationships for {}-{}".format(
                 source, target))
         if source == "Organization":
@@ -177,16 +177,16 @@ class NetworkxImporter():
                                                 elabel=key.upper(),
                                                 source='Wikidata')
 
-    def _clean_companies_onwer(self):
+    def clean_companies_onwer(self):
         print("Cleaning after relationships for Organizations-Owner")
 
-        o_ids = set([x[7:] for x in self.get_nodes_ids('nlabel',
+        o_ids = set([x[7:] for x in self.__get_nodes_ids('nlabel',
                      'Organization')])
-        o_u_ids = set([x[7:] for x in self.get_unlabeled_nodes_ids(
+        o_u_ids = set([x[7:] for x in self.__get_unlabeled_nodes_ids(
                 'Organization')])
         o_l_ids = o_ids - o_u_ids
-        p_ids = set([x[7:] for x in self.get_nodes_ids('nlabel', 'Person')])
-        p_u_ids = set([x[7:] for x in self.get_unlabeled_nodes_ids('Person')])
+        p_ids = set([x[7:] for x in self.__get_nodes_ids('nlabel', 'Person')])
+        p_u_ids = set([x[7:] for x in self.__get_unlabeled_nodes_ids('Person')])
         p_l_ids = p_ids - p_u_ids
 
         common_ids = o_ids & p_ids
@@ -201,14 +201,14 @@ class NetworkxImporter():
                 self.graph.remove_node("WD_Per_{}".format(key))
         print("\tCleaned totally {} nodes".format(i))
 
-    def _find_ids(self, node):
+    def __find_ids(self, node):
         print("\t\tCollecting ids for {}".format(node))
         return set([self.graph.nodes[key]['id'] for key in self.graph.nodes()
                     if 'label' not in self.graph.nodes[key].keys()
                     and 'nlabel' in self.graph.nodes[key].keys()
                     and self.graph.nodes[key]['nlabel'] == node])
 
-    def _expand_node(self, df, node):
+    def __expand_node(self, df, node):
         print("\t\tExpanding Nodes for ", node)
         for index, row in df.iterrows():
             self.graph.add_node("WD_{}_{}".format(node[:3], index),
@@ -221,7 +221,7 @@ class NetworkxImporter():
                                        for key in keys if not isNaN(row[key])
                                    })])
 
-    def _expand_person(self, df):
+    def __expand_person(self, df):
         print("\t\tExpanding Nodes for Person")
         for index, row in df.iterrows():
             self.graph.add_node("WD_Per_{}".format(index),
@@ -244,9 +244,9 @@ class NetworkxImporter():
                                         })])
 
         for node in self.p_nodes.keys():
-            self._create_node(df, "Person", node)
+            self.__create_node(df, "Person", node)
 
-    def _expand_product(self, df):
+    def __expand_product(self, df):
         print("\t\tExpanding Nodes for Product")
         for index, row in df.iterrows():
             self.graph.add_node("WD_Pro_{}".format(index),
@@ -266,50 +266,65 @@ class NetworkxImporter():
                                        if isinstance(row[key], float)
                                         })])
 
-    def _expand_nodes(self, df, node):
-        ids = self._find_ids(node)
+    def expand_nodes(self, df, node):
+        ids = self.__find_ids(node)
         print("\t\t{} nodes will be expanded out of {}".format(
                 len(ids & set(df.index)), len(ids)))
         if node == 'Person':
-            self._expand_person(df.loc[ids & set(df.index)])
+            self.__expand_person(df.loc[ids & set(df.index)])
         elif node == 'Product':
-            self._expand_product(df.loc[ids & set(df.index)])
+            self.__expand_product(df.loc[ids & set(df.index)])
         else:
-            self._expand_node(df.loc[ids & set(df.index)], node)
+            self.__expand_node(df.loc[ids & set(df.index)], node)
 
-    def _print_statistics(self):
+    def print_statistics(self):
         print("Statistics:")
         print("\tTotal Wikidata Nodes: {:,}".format(
                 self.graph.number_of_nodes()))
 
-        nodes = self.get_nodes_values('nlabel')
+        nodes = self.__get_nodes_values('nlabel')
         for i, node in enumerate(nodes):
             print("\t\tWikidata {} Nodes: {:,}".format(node,
-                            self.get_nodes_statistics(node, i)))
+                            self.__get_nodes_statistics(node, i)))
         print()
         for i, node in enumerate(nodes):
             print("\t\tUnlabeled Wikidata {} Nodes: {:,}".format(node,
-                            self.get_unlabeled_nodes_statistics(node, i)))
+                            self.__get_unlabeled_nodes_statistics(node, i)))
 
         print("\tTotal Wikidata Edges: {:,}".format(
                 self.graph.number_of_edges()))
 
-        edges = self.get_edges_values('elabel')
+        edges = self.__get_edges_values('elabel')
         for i, (elabel, nlabel1, nlabel2) in enumerate(edges):
             print("\t\t Wikidata {}({},{}) Edges: {:,}".format(elabel,
-                      nlabel1, nlabel2, self.get_edges_statistics(
+                      nlabel1, nlabel2, self.__get_edges_statistics(
                               elabel, nlabel1, nlabel2, i)))
 
-    def _export(self, path, format='gpickle'):
+    def export_unlabeled_ids(self):
+        nodes = self.__get_nodes_values('nlabel')
+        for i, node in enumerate(nodes):
+            print("\tExporting {}".format(node))
+            pd.Series(list(self.__get_unlabeled_nodes_ids(node))).to_csv(
+                    "./data/{}_collected.csv".format(node),
+                    header=False, index=None)
+
+    def export(self, path, format='gpickle'):
         if format == 'gpickle':
             nx.write_gpickle(self.graph, path)
         elif format == 'graphml':
-            nx.write_graphml(self.graph, path, 'utf-8')
+            # necessary cleaning
+            for node in self.graph.nodes:
+                for key in self.graph.nodes[node].keys():
+                    if isinstance(self.graph.nodes[node][key], list):
+                        self.graph.nodes[node][key] = '<<;>>'.join(
+                                self.graph.nodes[node][key])
+                    elif isinstance(self.graph.nodes[node][key], set):
+                        self.graph.nodes[node][key] = '<<;>>'.join(
+                                self.graph.nodes[node][key])
+                    if isinstance(self.graph.nodes[node][key], str):
+                        self.graph.nodes[node][key] = re.sub(
+                                b'[\x00-\x10]', b'',
+                                self.graph.nodes[node][key].encode(
+                                        'utf-8')).decode('utf-8')
 
-    def _export_unlabeled_ids(self):
-        nodes = self.get_nodes_values('nlabel')
-        for i, node in enumerate(nodes):
-            print("\tExporting {}".format(node))
-            pd.Series(list(self.get_unlabeled_nodes_ids(node))).to_csv(
-                    "./data/{}_collected.csv".format(node),
-                    header=False, index=None)
+            nx.write_graphml(self.graph, path, 'utf-8')

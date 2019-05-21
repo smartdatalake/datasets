@@ -1,9 +1,9 @@
 
-
+from numpy import nan
 import pandas as pd
 import networkx as nx
 from collections import Counter
-
+import re
 
 def isNaN(s):
     return s != s
@@ -14,19 +14,19 @@ class NetworkxImporter():
     def __init__(self):
         self.graph = nx.MultiDiGraph()
 
-    def get_nodes_ids(self, attribute, value):
+    def __get_nodes_ids(self, attribute, value):
         return [key for key in self.graph.nodes()
                 if attribute in self.graph.nodes[key].keys()
                 and self.graph.nodes[key][attribute] == value
                 and 'source' in self.graph.nodes[key].keys()
                 and self.graph.nodes[key]['source'] == 'Corpwatch']
 
-    def get_edges_ids(self, attribute, value):
+    def __get_edges_ids(self, attribute, value):
         return [key for key in self.graph.edges()
                 if self.graph.edge[key][attribute] == value
                 and self.graph.edges[key]['source'] == 'Corpwatch']
 
-    def get_nodes_statistics(self, val, choice=0):
+    def __get_nodes_statistics(self, val, choice=0):
         if choice == 0:
             self.no_nodes = Counter([self.graph.nodes[key]['nlabel']
                                     for key in self.graph.nodes()
@@ -36,7 +36,7 @@ class NetworkxImporter():
                                      ])
         return self.no_nodes[val]
 
-    def get_edges_statistics(self, val, _from=None, _to=None, choice=0):
+    def __get_edges_statistics(self, val, _from=None, _to=None, choice=0):
         if choice == 0:
             self.no_edges = Counter(["{}_{}_{}".format(
                                 self.graph.edges[edge]['elabel'],
@@ -49,20 +49,20 @@ class NetworkxImporter():
                                 ])
         return self.no_edges["{}_{}_{}".format(val, _from, _to)]
 
-    def get_nodes_values(self, attr):
+    def __get_nodes_values(self, attr):
         return set([self.graph.nodes[node][attr]
                     for node in self.graph.nodes()])
 
-    def get_edges_values(self, attr):
+    def __get_edges_values(self, attr):
         return set([(self.graph.edges[edge][attr],
                      self.graph.nodes[edge[0]]['nlabel'],
                      self.graph.nodes[edge[1]]['nlabel'])
                     for edge in self.graph.edges.keys()])
 
-    def _create_companies(self, df):
+    def create_companies(self, df):
         for index, row in df.iterrows():
             self.graph.add_node("CW_C_{}".format(row["cw_id"]),
-                                id=row["cw_id"], nlabel="Company",
+                                cw_id=row["cw_id"], nlabel="Company",
                                 latest_year=row["year"], cik=row["cik"],
                                 irs_number=row["irs_number"],
                                 no_parents=row["num_parents"],
@@ -78,7 +78,7 @@ class NetworkxImporter():
                                     "CW_I_{}".format(int(row["sic_code"])),
                                     elabel='PART_OF', source='Corpwatch')
 
-    def _create_industries(self, df):
+    def create_industries(self, df):
         for index, row in df.iterrows():
             self.graph.add_node("CW_I_{}".format(row["sic_code"]),
                                 sic_code=row["sic_code"], nlabel='Industry',
@@ -89,7 +89,7 @@ class NetworkxImporter():
                                 "CW_S_{}".format(row["sic_sector"]),
                                 elabel='PART_OF', source='Corpwatch')
 
-    def _create_sectors(self, df):
+    def create_sectors(self, df):
         for index, row in df.iterrows():
 
             self.graph.add_node("CW_S_{}".format(row["sic_sector"]),
@@ -104,7 +104,7 @@ class NetworkxImporter():
                                 "CW_SG_{}".format(row["sector_group"]),
                                 elabel='PART_OF', source='Corpwatch')
 
-    def _create_countries(self, df):
+    def create_countries(self, df):
         for index, row in df.iterrows():
             self.graph.add_node("CW_CT_{}".format(row["country_code"]),
                                 nlabel='Country',
@@ -113,7 +113,7 @@ class NetworkxImporter():
                                 latitude=row["latitude"],
                                 longitude=row["longitude"], source='Corpwatch')
 
-    def _create_subdivisions(self, df):
+    def create_subdivisions(self, df):
         for index, row in df.iterrows():
             self.graph.add_node("CW_SD_{}_{}".format(row["country_code"],
                                 row["subdivision_code"]),
@@ -132,7 +132,7 @@ class NetworkxImporter():
                                 "CW_CT_{}".format(row["country_code"]),
                                 elabel='IS_IN', source='Corpwatch')
 
-    def _create_countries_aliases(self, df):
+    def create_countries_aliases(self, df):
         df = pd.DataFrame(df.groupby('country_code').country_name.agg(
                 lambda x: set(x))).reset_index(level=0)
         for index, row in df.iterrows():
@@ -140,13 +140,15 @@ class NetworkxImporter():
                 self.graph.add_node("CW_CT_{}".format(row["country_code"]),
                                     alias=row["country_name"])
 
-    def _create_locations(self, df):
+    def create_locations(self, df):
         for index, row in df.iterrows():
+            lat, long = self.__find_coords(row)
             self.graph.add_node("CW_L_{}".format(row["street_1"]),
                                 nlabel='Location', street_1=row["street_1"],
                                 street_2=row["street_2"], city=row["city"],
                                 state=row["state"],
                                 postal_code=row["postal_code"],
+                                latitude=lat, longitude=long,
                                 source='Corpwatch')
             self.graph.add_node("CW_C_{}".format(row["cw_id"]),
                                 nlabel='Company', source='Corpwatch')
@@ -164,7 +166,7 @@ class NetworkxImporter():
                                                          row["subdiv_code"]),
                                     elabel='IS_IN', source='Corpwatch')
 
-    def _create_filers(self, df):
+    def create_filers(self, df):
         for index, row in df.iterrows():
             self.graph.add_node("CW_F_{}".format(row["cik"]), nlabel='Filer',
                                 cik=row["cik"], cw_id=row["cw_id"],
@@ -174,6 +176,7 @@ class NetworkxImporter():
                                 irs_number=row["irs_number"],
                                 source='Corpwatch')
             if not isNaN(row["business_street_1"]):
+                lat, long = self.__find_coords(row, "business_")
                 self.graph.add_node("CW_L_{}".format(row["business_street_1"]),
                                     nlabel='Location',
                                     street_1=row["business_street_1"],
@@ -181,12 +184,14 @@ class NetworkxImporter():
                                     city=row["business_city"],
                                     state=row["business_state"],
                                     postal_code=row["business_zip"],
+                                    latitude=lat, longitude=long,
                                     source='Corpwatch')
                 self.graph.add_edge("CW_F_{}".format(row["cik"]),
                                     "CW_L_{}".format(row["business_street_1"]),
                                     elabel='LOCATED_AT', type='business',
                                     source='Corpwatch')
             if not isNaN(row["mail_street_1"]):
+                lat, long = self.__find_coords(row, "mail_")
                 self.graph.add_node("CW_L_{}".format(row["mail_street_1"]),
                                     nlabel='Location',
                                     street_1=row["mail_street_1"],
@@ -194,13 +199,14 @@ class NetworkxImporter():
                                     city=row["mail_city"],
                                     state=row["mail_state"],
                                     postal_code=row["mail_zip"],
+                                    latitude=lat, longitude=long,
                                     source='Corpwatch')
                 self.graph.add_edge("CW_F_{}".format(row["cik"]),
                                     "CW_L_{}".format(row["mail_street_1"]),
                                     elabel='LOCATED_AT', type='mail',
                                     source='Corpwatch')
 
-    def _create_relationships(self, df):
+    def create_relationships(self, df):
         for index, row in df.iterrows():
             self.graph.add_node("CW_F_{}".format(int(row["filer_cik"])),
                                 nlabel='Filer', source='Corpwatch')
@@ -220,27 +226,47 @@ class NetworkxImporter():
                                     filing_id=row["filing_id"],
                                     source='Corpwatch')
 
-    def _print_statistics(self):
+    def __find_coords(self, row, prefix=""):
+        if prefix+'latitude' in row.index:
+            return (row[prefix+'latitude'], row[prefix+'longitude'])
+        return (nan, nan)
+
+    def print_statistics(self):
         print("Statistics:")
         print("\tTotal Corpwatch Nodes: {:,}".format(
                 self.graph.number_of_nodes()))
 
-        nodes = self.get_nodes_values('nlabel')
+        nodes = self.__get_nodes_values('nlabel')
         for i, node in enumerate(nodes):
             print("\t\tCorpwatch {} Nodes: {:,}".format(node,
-                            self.get_nodes_statistics(node, i)))
+                            self.__get_nodes_statistics(node, i)))
 
         print("\tTotal Corpwatch Edges: {:,}".format(
                 self.graph.number_of_edges()))
 
-        edges = self.get_edges_values('elabel')
+        edges = self.__get_edges_values('elabel')
         for i, (elabel, nlabel1, nlabel2) in enumerate(edges):
             print("\t\tCorpwatch {}({},{}) Edges: {:,}".format(elabel,
-                      nlabel1, nlabel2, self.get_edges_statistics(
+                      nlabel1, nlabel2, self.__get_edges_statistics(
                               elabel, nlabel1, nlabel2, i)))
 
-    def _export(self, path, format='gpickle'):
+    def export(self, path, format='gpickle'):
         if format == 'gpickle':
             nx.write_gpickle(self.graph, path)
         elif format == 'graphml':
+            # necessary cleaning
+            for node in self.graph.nodes:
+                for key in self.graph.nodes[node].keys():
+                    if isinstance(self.graph.nodes[node][key], list):
+                        self.graph.nodes[node][key] = '<<;>>'.join(
+                                self.graph.nodes[node][key])
+                    elif isinstance(self.graph.nodes[node][key], set):
+                        self.graph.nodes[node][key] = '<<;>>'.join(
+                                self.graph.nodes[node][key])
+                    if isinstance(self.graph.nodes[node][key], str):
+                        self.graph.nodes[node][key] = re.sub(
+                                b'[\x00-\x10]', b'',
+                                self.graph.nodes[node][key].encode(
+                                        'utf-8')).decode('utf-8')
+
             nx.write_graphml(self.graph, path, 'utf-8')

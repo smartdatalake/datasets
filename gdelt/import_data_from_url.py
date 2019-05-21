@@ -8,14 +8,13 @@ url = url_prefix+'masterfilelist.txt'
 links = pd.read_csv(urlopen(url), sep=' ', names=['Col1', 'Col2', 'Link']).Link
 links = links[links.str.contains("gkg").fillna(False)]
 
-# keep only files in the 3rd week of 2018
 links = links[(links >= url_prefix+'20180115') &
-              (links < url_prefix+'20180122')]
+              (links < url_prefix+'20180118')]
 
 d = Downloader(links)
-df = d._download_data()
+df = d.download_data()
 
 nim = NetworkxImporter()
-nim._create_graph(df)
-nim._print_statistics()
-nim._export('gdelt_graph.xml')
+nim.create_graph(df)
+nim.print_statistics()
+nim.export('gdelt_graph.xml')

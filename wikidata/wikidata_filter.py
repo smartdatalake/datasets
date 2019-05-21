@@ -38,7 +38,7 @@ class WikidataFilter():
 
         self.store.Found = 0
 
-    def filter_line(self, line):
+    def __filter_line(self, line):
         try:
             line = json.loads(line)
         except ValueError:
@@ -71,7 +71,7 @@ class WikidataFilter():
 
             t1 = time()
             chunk["FileDescriptor"] = chunk.apply(
-                    lambda x: self.filter_line(
+                    lambda x: self.__filter_line(
                             x["Value"][:-1]), axis=1)
 
             t2 = time()
@@ -88,12 +88,12 @@ class WikidataFilter():
                 lambda x: self.store.FileDescriptor[x["FileDescriptor"]].write(
                         x["Value"]+'\n'), axis=1)
 
-            if self.choice == "id" and not self.breaker(lines):
+            if self.choice == "id" and not self.__breaker(lines):
                 return
             t2 = time()
             print("\t\tTime elapsed: {:,} sec".format(t2-t1))
 
-    def breaker(self, lines):
+    def __breaker(self, lines):
         bools = []
         for index, row in self.store.iterrows():
             print("\t\tFor file {}: ".format(index), end=" ")

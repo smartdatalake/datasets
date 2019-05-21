@@ -20,27 +20,23 @@ The figure below depicts the schema of the produced graph.
 ![alt text](GDELT_Schema.png)
 
 The following table shows the number of graph nodes and edges for each type:
-(*NOTE* We took a sample of 1,553,626 Articles that were stored during the 15.Jan-21.Jan 2018)
+(*NOTE* We took a sample of 664,066 Articles that were stored during the 15.Jan-17.Jan 2018)
 
 | Node | Number |
 | --- | --- |
-| Article | 1,426,386 |
-| Person | 260,843 |
-| Organization | 174,042 |
-| Theme | 5,297 |
-| Location | 91,172 |
-| **Total** | **1,957,740** |
+| Article | 664,066 |
+| Person | 140,618 |
+| Organization | 97,076 |
+| Theme | 4,631 |
+| Location | 58,738 |
+| **Total** | **965,129** |
 
 | Edge | Number |
 | --- | --- |
-| mentions(Article, Person) | 1,247,059 |
-| mentions(Article, Organization) | 1,183,760 |
-| is_about(Article, Theme) | 1,394,215 |
-| mentions(Article, Location) | 13,753,271 |
-| **Total** | **17,578,305** |
+| mentions(Article, Person) | 582,278 |
+| mentions(Article, Organization) | 552,812 |
+| is_about(Article, Theme) | 1,713,068 |
+| mentions(Article, Location) | 6,182,644 |
+| **Total** | **9,030,802** |
 
 More information about the GDELT data can be found [here](http://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf).
-
-
-
-

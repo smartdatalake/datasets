@@ -1,6 +1,7 @@
 import pandas as pd
 import networkx as nx
 from collections import Counter
+import re
 
 
 def isNaN(s):
@@ -12,19 +13,19 @@ class NetworkxImporter():
     def __init__(self):
         self.graph = nx.MultiDiGraph()
 
-    def get_nodes_ids(self, attribute, value):
+    def __get_nodes_ids(self, attribute, value):
         return [key for key in self.graph.nodes()
                 if attribute in self.graph.nodes[key].keys()
                 and self.graph.nodes[key][attribute] == value
                 and 'source' in self.graph.nodes[key].keys()
                 and self.graph.nodes[key]['source'] == 'GDELT']
 
-    def get_edges_ids(self, attribute, value):
+    def __get_edges_ids(self, attribute, value):
         return [key for key in self.graph.edges()
                 if self.graph.edge[key][attribute] == value
                 and self.graph.edges[key]['source'] == 'GDELT']
 
-    def get_nodes_statistics(self, val, choice=0):
+    def __get_nodes_statistics(self, val, choice=0):
         if choice == 0:
             self.no_nodes = Counter([self.graph.nodes[key]['nlabel']
                                     for key in self.graph.nodes.keys()
@@ -34,7 +35,7 @@ class NetworkxImporter():
                                     'GDELT'])
         return self.no_nodes[val]
 
-    def get_edges_statistics(self, val, _from=None, _to=None, choice=0):
+    def __get_edges_statistics(self, val, _from=None, _to=None, choice=0):
         if choice == 0:
             self.no_edges = Counter(["{}_{}_{}".format(
                                 self.graph.edges[edge]['elabel'],
@@ -47,17 +48,17 @@ class NetworkxImporter():
                                 ])
         return self.no_edges["{}_{}_{}".format(val, _from, _to)]
 
-    def get_nodes_values(self, attr):
+    def __get_nodes_values(self, attr):
         return set([self.graph.nodes[node][attr]
                     for node in self.graph.nodes()])
 
-    def get_edges_values(self, attr):
+    def __get_edges_values(self, attr):
         return set([(self.graph.edges[edge][attr],
                      self.graph.nodes[edge[0]]['nlabel'],
                      self.graph.nodes[edge[1]]['nlabel'])
                     for edge in self.graph.edges.keys()])
 
-    def _create_graph(self, df):
+    def create_graph(self, df):
 
         for no, (index, row) in enumerate(df.iterrows()):
             if df.shape[0] > 1000:
@@ -84,11 +85,10 @@ class NetworkxImporter():
                                 counts=row['COUNTS'],
                                 source='GDELT')
 
-            sels = [('ENHANCEDTHEMES', 'Theme', "IS_ABOUT"),
-                    ('ENHANCEDPERSONS', 'Person', "MENTIONS"),
+            sels = [('ENHANCEDPERSONS', 'Person', "MENTIONS"),
                     ('ENHANCEDORGANIZATIONS', 'Organization', "MENTIONS")]
 
-            for sel, label, edge in sels:
+            for (sel, label, edge) in sels:
                 if not isNaN(row[sel]):
 
                     temp = pd.Series(row[sel].split(";")).apply(
@@ -105,6 +105,24 @@ class NetworkxImporter():
                                                             label[0], key),
                                                 elabel=edge, source='GDELT',
                                                 position=pos)
+
+            sel = 'ENHANCEDTHEMES'
+
+            if not isNaN(row[sel]):
+
+                temp = pd.Series(row[sel].split(";")).apply(
+                                            lambda x: x.split(","))
+                for (key, pos) in temp[:1]:
+                    if key != '':
+                        for r_theme, theme in enumerate(key.split("_")):
+                            self.graph.add_node("GD_T_{}".format(theme),
+                                                nlabel='Theme', name=theme,
+                                                rank=r_theme, source='GDELT')
+                            self.graph.add_edge("GD_A_{}".format(
+                                                row["GKGRECORDID"]),
+                                                "GD_T_{}".format(theme),
+                                                elabel="IS_ABOUT",
+                                                source='GDELT', position=pos)
 
             sel = "ENHANCEDLOCATIONS"
             if not isNaN(row[sel]):
@@ -138,28 +156,43 @@ class NetworkxImporter():
                                         elabel='MENTIONS', source='GDELT',
                                         position=row2['Position'])
 
-    def _print_statistics(self):
+    def print_statistics(self):
         print("Statistics:")
 
         print("\tTotal GDELT Nodes: {:,}".format(
                 self.graph.number_of_nodes()))
 
-        nodes = self.get_nodes_values('nlabel')
+        nodes = self.__get_nodes_values('nlabel')
         for i, node in enumerate(nodes):
             print("\t\tGDELT {} Nodes: {:,}".format(node,
-                                        self.get_nodes_statistics(node, i)))
+                                        self.__get_nodes_statistics(node, i)))
 
         print("\tTotal GDELT Edges: {:,}".format(
                 self.graph.number_of_edges()))
 
-        edges = self.get_edges_values('elabel')
+        edges = self.__get_edges_values('elabel')
         for i, (elabel, nlabel1, nlabel2) in enumerate(edges):
             print("\t\tGDELT {}({},{}) Edges: {:,}".format(elabel,
-                      nlabel1, nlabel2, self.get_edges_statistics(
+                      nlabel1, nlabel2, self.__get_edges_statistics(
                               elabel, nlabel1, nlabel2, i)))
 
-    def _export(self, path, format='gpickle'):
+    def export(self, path, format='gpickle'):
         if format == 'gpickle':
             nx.write_gpickle(self.graph, path)
         elif format == 'graphml':
+            # necessary cleaning
+            for node in self.graph.nodes:
+                for key in self.graph.nodes[node].keys():
+                    if isinstance(self.graph.nodes[node][key], list):
+                        self.graph.nodes[node][key] = '<<;>>'.join(
+                                self.graph.nodes[node][key])
+                    elif isinstance(self.graph.nodes[node][key], set):
+                        self.graph.nodes[node][key] = '<<;>>'.join(
+                                self.graph.nodes[node][key])
+                    if isinstance(self.graph.nodes[node][key], str):
+                        self.graph.nodes[node][key] = re.sub(
+                                b'[\x00-\x10]', b'',
+                                self.graph.nodes[node][key].encode(
+                                        'utf-8')).decode('utf-8')
+
             nx.write_graphml(self.graph, path, 'utf-8')
