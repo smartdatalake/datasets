@@ -1,0 +1,1109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osmfilter 1.4.0">
+	<bounds minlat="34.2337399" minlon="31.95244" maxlat="36.00323" maxlon="34.96147"/>
+	<node id="33749752" lat="34.6799143" lon="33.0424496" version="3" timestamp="2017-09-25T21:39:22Z" changeset="0"/>
+	<node id="33749753" lat="34.6794434" lon="33.0421151" version="4" timestamp="2017-11-01T15:01:20Z" changeset="0"/>
+	<node id="33749763" lat="34.6811344" lon="33.0451312" version="7" timestamp="2017-11-29T18:10:35Z" changeset="0"/>
+	<node id="33749764" lat="34.6820325" lon="33.0462745" version="10" timestamp="2017-11-28T23:10:59Z" changeset="0"/>
+	<node id="33749768" lat="34.6836029" lon="33.0504642" version="7" timestamp="2011-05-03T13:08:11Z" changeset="0"/>
+	<node id="34204994" lat="34.6805934" lon="33.0431656" version="14" timestamp="2017-11-29T20:47:37Z" changeset="0">
+		<tag k="highway" v="traffic_signals"/>
+	</node>
+	<node id="34205177" lat="34.6806695" lon="33.0434583" version="8" timestamp="2017-09-25T21:39:22Z" changeset="0"/>
+	<node id="54245147" lat="34.6842934" lon="33.0524086" version="4" timestamp="2017-09-16T13:35:38Z" changeset="0"/>
+	<node id="54245151" lat="34.6845383" lon="33.0534777" version="10" timestamp="2011-05-08T12:14:49Z" changeset="0"/>
+	<node id="54245177" lat="34.6843093" lon="33.0519427" version="9" timestamp="2017-11-29T17:12:51Z" changeset="0"/>
+	<node id="59599322" lat="34.6791455" lon="33.0417362" version="8" timestamp="2017-11-29T14:29:45Z" changeset="0"/>
+	<node id="60054271" lat="34.697125" lon="33.049452" version="3" timestamp="2017-12-19T12:44:26Z" changeset="0"/>
+	<node id="60054272" lat="34.696759" lon="33.0498721" version="3" timestamp="2017-12-19T12:44:26Z" changeset="0"/>
+	<node id="60054273" lat="34.6956858" lon="33.0506159" version="8" timestamp="2017-12-19T12:44:26Z" changeset="0"/>
+	<node id="60054274" lat="34.6945944" lon="33.0510618" version="4" timestamp="2017-08-18T14:29:26Z" changeset="0"/>
+	<node id="60054275" lat="34.6939804" lon="33.0513859" version="11" timestamp="2017-08-18T14:29:26Z" changeset="0"/>
+	<node id="60054276" lat="34.6931372" lon="33.0521062" version="8" timestamp="2017-11-29T22:54:51Z" changeset="0"/>
+	<node id="60054277" lat="34.692491" lon="33.0526535" version="3" timestamp="2017-08-18T14:29:26Z" changeset="0"/>
+	<node id="142875286" lat="34.6913284" lon="33.0532423" version="2" timestamp="2009-01-25T16:42:44Z" changeset="0"/>
+	<node id="148990523" lat="34.7025765" lon="33.0493667" version="5" timestamp="2017-09-26T11:09:33Z" changeset="0"/>
+	<node id="148990524" lat="34.7024477" lon="33.0501867" version="3" timestamp="2017-09-26T11:09:33Z" changeset="0"/>
+	<node id="148990525" lat="34.7023816" lon="33.0505271" version="3" timestamp="2017-09-26T11:09:33Z" changeset="0"/>
+	<node id="148990526" lat="34.7021497" lon="33.0508722" version="3" timestamp="2017-09-26T11:09:33Z" changeset="0"/>
+	<node id="148990527" lat="34.7017854" lon="33.0511647" version="2" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="148990528" lat="34.7011029" lon="33.0514863" version="5" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="148990529" lat="34.7003408" lon="33.0516717" version="2" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="148990530" lat="34.6995293" lon="33.0517583" version="2" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="148990531" lat="34.6984441" lon="33.0518326" version="5" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="212653165" lat="34.6890895" lon="33.0521898" version="5" timestamp="2017-11-29T23:20:24Z" changeset="0"/>
+	<node id="218570211" lat="34.685555" lon="33.053173" version="11" timestamp="2018-01-14T09:43:46Z" changeset="0"/>
+	<node id="218573092" lat="34.6865402" lon="33.0536078" version="10" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218573093" lat="34.686594" lon="33.0535984" version="10" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218573094" lat="34.6867271" lon="33.0536557" version="19" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218573098" lat="34.6867985" lon="33.0538919" version="12" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218573100" lat="34.6867748" lon="33.0539717" version="10" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218573101" lat="34.6867306" lon="33.0540373" version="10" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218573103" lat="34.6866708" lon="33.0540811" version="10" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218573104" lat="34.6866307" lon="33.0540946" version="13" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218573105" lat="34.6865751" lon="33.0540969" version="10" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218573106" lat="34.686454" lon="33.0540288" version="13" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218574142" lat="34.6864904" lon="33.053634" version="28" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="218575159" lat="34.6868629" lon="33.0536551" version="12" timestamp="2017-09-06T13:28:50Z" changeset="0"/>
+	<node id="218575160" lat="34.6871059" lon="33.0535396" version="14" timestamp="2017-10-17T12:31:56Z" changeset="0"/>
+	<node id="218575526" lat="34.6869151" lon="33.0537299" version="4" timestamp="2017-09-06T13:28:50Z" changeset="0"/>
+	<node id="218575529" lat="34.6868755" lon="33.0537813" version="4" timestamp="2017-09-06T13:28:50Z" changeset="0"/>
+	<node id="218576731" lat="34.6862825" lon="33.0540793" version="7" timestamp="2017-09-06T13:28:50Z" changeset="0"/>
+	<node id="218579453" lat="34.688195" lon="33.0527985" version="14" timestamp="2017-11-29T23:20:24Z" changeset="0"/>
+	<node id="218580272" lat="34.6877498" lon="33.0531015" version="10" timestamp="2017-11-29T23:20:24Z" changeset="0"/>
+	<node id="218580649" lat="34.6886658" lon="33.0524782" version="13" timestamp="2017-11-29T23:20:24Z" changeset="0"/>
+	<node id="218582951" lat="34.689983" lon="33.0515819" version="6" timestamp="2017-11-29T23:20:24Z" changeset="0"/>
+	<node id="218584251" lat="34.6895588" lon="33.0518705" version="6" timestamp="2017-11-29T23:20:24Z" changeset="0"/>
+	<node id="218587578" lat="34.6918316" lon="33.0529921" version="3" timestamp="2015-05-25T21:56:33Z" changeset="0"/>
+	<node id="218592791" lat="34.6843459" lon="33.0528053" version="2" timestamp="2017-11-29T17:20:29Z" changeset="0">
+		<tag k="highway" v="traffic_signals"/>
+	</node>
+	<node id="218592796" lat="34.6843313" lon="33.0527208" version="3" timestamp="2011-05-03T13:08:11Z" changeset="0"/>
+	<node id="218593258" lat="34.686086" lon="33.0534222" version="10" timestamp="2017-11-29T14:53:12Z" changeset="0"/>
+	<node id="218596030" lat="34.6873264" lon="33.0533896" version="4" timestamp="2017-11-29T23:20:23Z" changeset="0"/>
+	<node id="218685789" lat="34.6790067" lon="33.0410316" version="8" timestamp="2017-09-27T08:51:30Z" changeset="0">
+		<tag k="highway" v="traffic_signals"/>
+	</node>
+	<node id="218693923" lat="34.6809334" lon="33.0444086" version="6" timestamp="2017-11-29T18:10:35Z" changeset="0"/>
+	<node id="218719540" lat="34.6908752" lon="33.0522526" version="5" timestamp="2018-01-17T07:38:14Z" changeset="0"/>
+	<node id="218721915" lat="34.6916412" lon="33.0530993" version="11" timestamp="2015-05-26T11:26:01Z" changeset="0"/>
+	<node id="218723275" lat="34.6927054" lon="33.052524" version="10" timestamp="2017-11-29T22:54:51Z" changeset="0"/>
+	<node id="218723937" lat="34.6968602" lon="33.0497439" version="9" timestamp="2017-12-19T12:44:26Z" changeset="0"/>
+	<node id="218729528" lat="34.6951347" lon="33.050814" version="4" timestamp="2017-10-02T17:46:56Z" changeset="0"/>
+	<node id="218730625" lat="34.6963533" lon="33.0502236" version="4" timestamp="2017-12-19T12:44:26Z" changeset="0"/>
+	<node id="222014274" lat="34.6843192" lon="33.0526484" version="7" timestamp="2017-09-29T21:47:17Z" changeset="0"/>
+	<node id="222014677" lat="34.6843136" lon="33.0520891" version="9" timestamp="2017-09-16T13:35:37Z" changeset="0"/>
+	<node id="222021749" lat="34.6840547" lon="33.0514986" version="6" timestamp="2017-11-29T17:48:17Z" changeset="0"/>
+	<node id="243234941" lat="34.6789795" lon="33.04068" version="2" timestamp="2012-10-22T21:07:56Z" changeset="0"/>
+	<node id="267796056" lat="34.6803362" lon="33.0428297" version="3" timestamp="2017-09-25T21:39:22Z" changeset="0"/>
+	<node id="267796403" lat="34.6810639" lon="33.0448927" version="5" timestamp="2017-11-29T18:10:35Z" changeset="0"/>
+	<node id="267796420" lat="34.6813846" lon="33.0455129" version="7" timestamp="2017-11-29T18:10:35Z" changeset="0"/>
+	<node id="267797012" lat="34.6807922" lon="33.0438588" version="6" timestamp="2017-11-29T18:10:36Z" changeset="0"/>
+	<node id="267874165" lat="34.6814588" lon="33.0456705" version="5" timestamp="2017-11-29T18:10:35Z" changeset="0"/>
+	<node id="267874482" lat="34.6817711" lon="33.0459777" version="6" timestamp="2017-11-29T18:10:35Z" changeset="0"/>
+	<node id="267874505" lat="34.6823068" lon="33.0466145" version="7" timestamp="2017-11-28T23:10:59Z" changeset="0"/>
+	<node id="267874985" lat="34.683031" lon="33.0478538" version="7" timestamp="2018-03-28T07:08:36Z" changeset="0"/>
+	<node id="267919662" lat="34.6935333" lon="33.0517202" version="3" timestamp="2017-08-18T14:29:26Z" changeset="0"/>
+	<node id="267919664" lat="34.6923347" lon="33.052736" version="4" timestamp="2017-11-29T22:49:18Z" changeset="0"/>
+	<node id="267919695" lat="34.6910063" lon="33.0525389" version="6" timestamp="2018-01-17T07:38:13Z" changeset="0"/>
+	<node id="267920257" lat="34.6944801" lon="33.0511219" version="5" timestamp="2017-11-29T22:54:51Z" changeset="0"/>
+	<node id="267921232" lat="34.6974634" lon="33.0489851" version="2" timestamp="2017-12-19T12:44:26Z" changeset="0"/>
+	<node id="267921243" lat="34.6976826" lon="33.0493987" version="2" timestamp="2017-11-29T22:54:51Z" changeset="0"/>
+	<node id="267921244" lat="34.698048" lon="33.050133" version="2" timestamp="2017-11-29T22:54:51Z" changeset="0"/>
+	<node id="267921245" lat="34.6981609" lon="33.0502532" version="2" timestamp="2017-11-29T22:54:51Z" changeset="0"/>
+	<node id="267921246" lat="34.6982809" lon="33.0502704" version="2" timestamp="2017-11-29T22:54:51Z" changeset="0"/>
+	<node id="267921247" lat="34.6983986" lon="33.0502624" version="4" timestamp="2017-11-29T22:54:51Z" changeset="0"/>
+	<node id="267921348" lat="34.6984255" lon="33.0510203" version="4" timestamp="2017-11-29T22:54:51Z" changeset="0"/>
+	<node id="267922123" lat="34.6997266" lon="33.0517316" version="3" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="268528598" lat="34.6837249" lon="33.0508294" version="5" timestamp="2017-11-29T17:20:29Z" changeset="0"/>
+	<node id="268528602" lat="34.6835763" lon="33.0502018" version="6" timestamp="2017-11-29T17:48:17Z" changeset="0"/>
+	<node id="268528617" lat="34.6832768" lon="33.0483012" version="9" timestamp="2018-03-28T07:08:36Z" changeset="0"/>
+	<node id="268528618" lat="34.6835675" lon="33.0494605" version="6" timestamp="2017-11-29T17:48:17Z" changeset="0"/>
+	<node id="268528658" lat="34.683756" lon="33.0509091" version="6" timestamp="2017-11-29T17:48:17Z" changeset="0"/>
+	<node id="268533592" lat="34.6844264" lon="33.0531306" version="6" timestamp="2014-03-24T11:21:05Z" changeset="0"/>
+	<node id="268533593" lat="34.6835333" lon="33.0487814" version="8" timestamp="2018-03-28T07:08:36Z" changeset="0"/>
+	<node id="269060958" lat="34.7002065" lon="33.0516984" version="3" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="269061416" lat="34.7004448" lon="33.0516511" version="2" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="269061740" lat="34.7020111" lon="33.0509832" version="2" timestamp="2017-09-26T11:09:34Z" changeset="0"/>
+	<node id="269061816" lat="34.7015435" lon="33.0512823" version="2" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="269061864" lat="34.7007644" lon="33.0515836" version="3" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="269062042" lat="34.699894" lon="33.0517098" version="4" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="269062248" lat="34.6990163" lon="33.0518009" version="3" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="269062524" lat="34.7024047" lon="33.0503933" version="3" timestamp="2017-09-26T11:09:34Z" changeset="0"/>
+	<node id="269062577" lat="34.7025987" lon="33.0490983" version="6" timestamp="2017-09-26T11:09:34Z" changeset="0"/>
+	<node id="269062611" lat="34.7028884" lon="33.0493864" version="6" timestamp="2017-09-26T11:09:34Z" changeset="0"/>
+	<node id="269062612" lat="34.7029825" lon="33.049741" version="6" timestamp="2017-09-26T11:09:34Z" changeset="0"/>
+	<node id="269062613" lat="34.7030835" lon="33.0503302" version="7" timestamp="2017-09-26T11:09:34Z" changeset="0"/>
+	<node id="269062614" lat="34.7031128" lon="33.051006" version="8" timestamp="2017-12-01T18:40:48Z" changeset="0"/>
+	<node id="269062615" lat="34.7031649" lon="33.052311" version="5" timestamp="2010-11-28T16:47:55Z" changeset="0"/>
+	<node id="269062616" lat="34.7032199" lon="33.0525771" version="5" timestamp="2010-11-28T16:48:27Z" changeset="0"/>
+	<node id="269062617" lat="34.703374" lon="33.053218" version="6" timestamp="2017-12-01T18:40:48Z" changeset="0"/>
+	<node id="269062618" lat="34.7037446" lon="33.05456" version="5" timestamp="2010-11-28T18:59:44Z" changeset="0"/>
+	<node id="269062619" lat="34.7039673" lon="33.0551531" version="5" timestamp="2010-11-28T19:00:01Z" changeset="0"/>
+	<node id="269062620" lat="34.7042325" lon="33.0556602" version="5" timestamp="2010-11-28T18:59:53Z" changeset="0"/>
+	<node id="269062621" lat="34.7044416" lon="33.0560251" version="5" timestamp="2010-11-28T19:00:12Z" changeset="0"/>
+	<node id="269062622" lat="34.7044487" lon="33.0562975" version="5" timestamp="2010-11-28T19:00:26Z" changeset="0"/>
+	<node id="269062623" lat="34.7043253" lon="33.0565255" version="5" timestamp="2010-11-28T19:00:43Z" changeset="0"/>
+	<node id="269062625" lat="34.7028903" lon="33.0576445" version="5" timestamp="2010-11-28T19:00:41Z" changeset="0"/>
+	<node id="269062626" lat="34.7024669" lon="33.0578828" version="7" timestamp="2017-12-01T19:21:59Z" changeset="0"/>
+	<node id="269063354" lat="34.7023752" lon="33.0551746" version="2" timestamp="2010-11-28T19:01:00Z" changeset="0"/>
+	<node id="269063361" lat="34.7031118" lon="33.0574464" version="5" timestamp="2010-11-28T19:00:13Z" changeset="0"/>
+	<node id="269063362" lat="34.7022246" lon="33.0546729" version="3" timestamp="2017-12-01T19:13:45Z" changeset="0"/>
+	<node id="269063363" lat="34.7032431" lon="33.0548159" version="4" timestamp="2017-12-01T19:13:45Z" changeset="0"/>
+	<node id="269063371" lat="34.7018338" lon="33.0533985" version="3" timestamp="2010-11-28T19:00:20Z" changeset="0"/>
+	<node id="269063372" lat="34.7017935" lon="33.0535474" version="3" timestamp="2010-11-28T19:00:14Z" changeset="0"/>
+	<node id="269063373" lat="34.7017444" lon="33.0538678" version="3" timestamp="2010-11-28T19:00:30Z" changeset="0"/>
+	<node id="269063374" lat="34.7017599" lon="33.0541448" version="3" timestamp="2010-11-28T19:00:46Z" changeset="0"/>
+	<node id="269063375" lat="34.7018502" lon="33.0548582" version="4" timestamp="2017-12-01T19:13:45Z" changeset="0"/>
+	<node id="269063396" lat="34.7030471" lon="33.0542659" version="4" timestamp="2017-12-01T19:13:45Z" changeset="0"/>
+	<node id="269063401" lat="34.7028967" lon="33.0549926" version="4" timestamp="2017-12-01T19:13:45Z" changeset="0"/>
+	<node id="269063441" lat="34.7036207" lon="33.0570452" version="7" timestamp="2017-12-01T18:55:23Z" changeset="0"/>
+	<node id="314943595" lat="34.6904291" lon="33.0512783" version="5" timestamp="2018-01-17T07:38:14Z" changeset="0">
+		<tag k="highway" v="stop"/>
+	</node>
+	<node id="320034779" lat="34.6863682" lon="33.0540477" version="4" timestamp="2012-09-07T20:19:38Z" changeset="0"/>
+	<node id="320380392" lat="34.6835764" lon="33.0499097" version="5" timestamp="2017-09-29T17:27:23Z" changeset="0"/>
+	<node id="866813438" lat="34.7022464" lon="33.0580069" version="2" timestamp="2010-11-28T18:59:50Z" changeset="0"/>
+	<node id="866813443" lat="34.7016431" lon="33.0582454" version="2" timestamp="2010-11-28T19:00:38Z" changeset="0"/>
+	<node id="1011412275" lat="34.701431" lon="33.05422" version="1" timestamp="2010-11-28T18:58:55Z" changeset="0"/>
+	<node id="1011412469" lat="34.7005791" lon="33.0554253" version="2" timestamp="2017-09-26T11:09:33Z" changeset="0"/>
+	<node id="1011412475" lat="34.7009114" lon="33.0564834" version="2" timestamp="2017-09-26T11:09:33Z" changeset="0"/>
+	<node id="1011412683" lat="34.7034943" lon="33.0537181" version="1" timestamp="2010-11-28T18:59:02Z" changeset="0"/>
+	<node id="1011412754" lat="34.7006182" lon="33.0551051" version="2" timestamp="2017-09-26T11:09:33Z" changeset="0"/>
+	<node id="1011412831" lat="34.7006894" lon="33.0549717" version="1" timestamp="2010-11-28T18:59:04Z" changeset="0"/>
+	<node id="1011413132" lat="34.7012125" lon="33.0543459" version="1" timestamp="2010-11-28T18:59:08Z" changeset="0"/>
+	<node id="1011413148" lat="34.7014511" lon="33.0578459" version="1" timestamp="2010-11-28T18:59:08Z" changeset="0"/>
+	<node id="1269297190" lat="34.6849409" lon="33.0543421" version="8" timestamp="2011-05-08T12:38:21Z" changeset="0">
+		<tag k="name" v="Municipal Garden"/>
+		<tag k="highway" v="bus_stop"/>
+		<tag k="public_transport" v="stop_position"/>
+	</node>
+	<node id="1269297193" lat="34.6850231" lon="33.0528032" version="10" timestamp="2017-11-01T15:39:11Z" changeset="0">
+		<tag k="bus" v="yes"/>
+		<tag k="highway" v="bus_stop"/>
+		<tag k="name" v="Kalogries"/>
+		<tag k="public_transport" v="stop_position"/>
+	</node>
+	<node id="1271113668" lat="34.6845508" lon="33.0524418" version="4" timestamp="2017-09-29T21:47:17Z" changeset="0"/>
+	<node id="1271135510" lat="34.6876659" lon="33.0531585" version="5" timestamp="2017-11-29T23:20:23Z" changeset="0">
+		<tag k="bus" v="yes"/>
+		<tag k="highway" v="bus_stop"/>
+		<tag k="name" v="DHL"/>
+		<tag k="public_transport" v="stop_position"/>
+	</node>
+	<node id="1274066730" lat="34.6838844" lon="33.0512029" version="4" timestamp="2014-03-21T14:35:54Z" changeset="0"/>
+	<node id="1274066743" lat="34.6838164" lon="33.0510531" version="3" timestamp="2017-11-29T17:48:17Z" changeset="0"/>
+	<node id="1274259982" lat="34.6861734" lon="33.0541332" version="3" timestamp="2017-11-29T17:16:25Z" changeset="0"/>
+	<node id="1274259990" lat="34.6847601" lon="33.0539689" version="2" timestamp="2011-05-07T19:40:08Z" changeset="0"/>
+	<node id="1274259997" lat="34.6851308" lon="33.0547262" version="2" timestamp="2011-05-07T19:40:08Z" changeset="0"/>
+	<node id="1274298153" lat="34.6846226" lon="33.0537064" version="6" timestamp="2014-03-24T11:21:04Z" changeset="0"/>
+	<node id="1274447897" lat="34.684688" lon="33.0538507" version="3" timestamp="2014-03-24T11:21:04Z" changeset="0"/>
+	<node id="1275690257" lat="34.6848673" lon="33.0526269" version="2" timestamp="2011-05-09T09:02:27Z" changeset="0"/>
+	<node id="1275690265" lat="34.6850415" lon="33.0527616" version="2" timestamp="2011-05-09T09:02:27Z" changeset="0"/>
+	<node id="1277574336" lat="34.6842945" lon="33.0522791" version="4" timestamp="2017-09-16T13:35:37Z" changeset="0"/>
+	<node id="1278951348" lat="34.6788321" lon="33.0394644" version="5" timestamp="2017-11-28T22:46:07Z" changeset="0"/>
+	<node id="1280047315" lat="34.6847296" lon="33.0525786" version="2" timestamp="2017-11-29T17:12:51Z" changeset="0"/>
+	<node id="1280047324" lat="34.6852145" lon="33.0529678" version="2" timestamp="2018-01-14T09:43:22Z" changeset="0"/>
+	<node id="1280296464" lat="34.6849087" lon="33.0527156" version="3" timestamp="2017-11-29T17:12:51Z" changeset="0"/>
+	<node id="1615986133" lat="34.6790231" lon="33.0414474" version="3" timestamp="2017-09-25T21:30:44Z" changeset="0"/>
+	<node id="1615986138" lat="34.6804772" lon="33.0429604" version="1" timestamp="2012-02-02T20:28:23Z" changeset="0"/>
+	<node id="1641958207" lat="34.678468" lon="33.03862" version="4" timestamp="2017-09-25T21:30:44Z" changeset="0"/>
+	<node id="1641958208" lat="34.678891" lon="33.0398051" version="6" timestamp="2017-11-28T22:46:07Z" changeset="0"/>
+	<node id="1832929593" lat="34.6985396" lon="33.051831" version="2" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="1904762399" lat="34.685376" lon="33.0530805" version="5" timestamp="2018-01-14T09:43:22Z" changeset="0"/>
+	<node id="1904762437" lat="34.6865212" lon="33.0540809" version="5" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="2702321882" lat="34.6790591" lon="33.0374209" version="2" timestamp="2017-09-29T09:48:34Z" changeset="0"/>
+	<node id="2702321888" lat="34.6787443" lon="33.0372869" version="3" timestamp="2017-11-28T22:33:17Z" changeset="0"/>
+	<node id="2702321889" lat="34.6793861" lon="33.0371888" version="2" timestamp="2017-09-29T09:48:34Z" changeset="0"/>
+	<node id="2703761226" lat="34.6786479" lon="33.0389702" version="2" timestamp="2017-09-25T21:30:46Z" changeset="0"/>
+	<node id="2742299470" lat="34.6849299" lon="33.0543252" version="2" timestamp="2017-09-25T21:30:48Z" changeset="0"/>
+	<node id="2742299474" lat="34.6848046" lon="33.0540607" version="1" timestamp="2014-03-25T16:00:16Z" changeset="0"/>
+	<node id="3098179301" lat="34.6843573" lon="33.0528588" version="1" timestamp="2014-09-27T05:45:22Z" changeset="0">
+		<tag k="highway" v="crossing"/>
+		<tag k="crossing" v="traffic_signals"/>
+	</node>
+	<node id="3276327510" lat="34.7026886" lon="33.0491434" version="3" timestamp="2017-09-26T11:09:35Z" changeset="0"/>
+	<node id="3276327512" lat="34.7027399" lon="33.0491747" version="3" timestamp="2017-09-26T11:09:35Z" changeset="0"/>
+	<node id="3891118256" lat="34.6792011" lon="33.0372267" version="6" timestamp="2018-03-05T12:21:54Z" changeset="0">
+		<tag k="addr:street" v="Archiepiskopou Leontiou A"/>
+		<tag k="amenity" v="bus_station"/>
+		<tag k="name" v="Λεοντίου, Παλαιό Νοσοκομείο"/>
+		<tag k="name:en" v="Leontiou, Old Hospital"/>
+	</node>
+	<node id="4281650074" lat="34.700967" lon="33.0546238" version="2" timestamp="2017-09-26T11:09:35Z" changeset="0"/>
+	<node id="4725986040" lat="34.6921237" lon="33.0528473" version="2" timestamp="2017-10-02T17:46:57Z" changeset="0"/>
+	<node id="5109341256" lat="34.6827614" lon="33.0473858" version="3" timestamp="2017-11-29T17:32:27Z" changeset="0"/>
+	<node id="5109341279" lat="34.6843523" lon="33.0522391" version="1" timestamp="2017-09-16T13:35:32Z" changeset="0"/>
+	<node id="5109341280" lat="34.6844119" lon="33.0523316" version="1" timestamp="2017-09-16T13:35:32Z" changeset="0"/>
+	<node id="5130553179" lat="34.7005849" lon="33.0552596" version="1" timestamp="2017-09-26T11:09:27Z" changeset="0"/>
+	<node id="5130553180" lat="34.7006004" lon="33.0555573" version="1" timestamp="2017-09-26T11:09:27Z" changeset="0"/>
+	<node id="5130553181" lat="34.7006312" lon="33.0557102" version="1" timestamp="2017-09-26T11:09:27Z" changeset="0"/>
+	<node id="5130553184" lat="34.7022674" lon="33.05074" version="1" timestamp="2017-09-26T11:09:27Z" changeset="0"/>
+	<node id="5130553185" lat="34.7023402" lon="33.0506301" version="1" timestamp="2017-09-26T11:09:27Z" changeset="0"/>
+	<node id="5130553189" lat="34.7025672" lon="33.0494785" version="1" timestamp="2017-09-26T11:09:27Z" changeset="0"/>
+	<node id="5130553194" lat="34.7028462" lon="33.0493051" version="1" timestamp="2017-09-26T11:09:28Z" changeset="0"/>
+	<node id="5130553196" lat="34.7029366" lon="33.0495438" version="1" timestamp="2017-09-26T11:09:28Z" changeset="0"/>
+	<node id="5130553199" lat="34.7030654" lon="33.0502055" version="1" timestamp="2017-09-26T11:09:28Z" changeset="0"/>
+	<node id="5130553200" lat="34.70309" lon="33.0504351" version="1" timestamp="2017-09-26T11:09:28Z" changeset="0"/>
+	<node id="5138572486" lat="34.686988" lon="33.0536527" version="1" timestamp="2017-09-29T21:47:17Z" changeset="0"/>
+	<node id="5143610052" lat="34.6958471" lon="33.0505316" version="2" timestamp="2017-12-19T12:44:26Z" changeset="0"/>
+	<node id="5143659034" lat="34.7026511" lon="33.0531746" version="1" timestamp="2017-10-02T18:13:12Z" changeset="0"/>
+	<node id="5143659035" lat="34.7026309" lon="33.0531479" version="1" timestamp="2017-10-02T18:13:12Z" changeset="0"/>
+	<node id="5143659036" lat="34.7025993" lon="33.0531244" version="1" timestamp="2017-10-02T18:13:12Z" changeset="0"/>
+	<node id="5143659038" lat="34.7026772" lon="33.0532282" version="1" timestamp="2017-10-02T18:13:12Z" changeset="0"/>
+	<node id="5143659040" lat="34.7011265" lon="33.0570264" version="1" timestamp="2017-10-02T18:13:13Z" changeset="0"/>
+	<node id="5143659048" lat="34.7014104" lon="33.0577431" version="1" timestamp="2017-10-02T18:13:13Z" changeset="0"/>
+	<node id="5204346695" lat="34.6864732" lon="33.053648" version="2" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="5204346699" lat="34.6864727" lon="33.054048" version="2" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="5204346700" lat="34.6868008" lon="33.0538709" version="2" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="5204346701" lat="34.6866981" lon="33.0536313" version="2" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="5204346712" lat="34.6809" lon="33.0442849" version="2" timestamp="2017-11-29T18:10:35Z" changeset="0"/>
+	<node id="5204346713" lat="34.6808469" lon="33.0442293" version="2" timestamp="2017-11-29T18:10:35Z" changeset="0"/>
+	<node id="5204346714" lat="34.6807284" lon="33.0439004" version="2" timestamp="2017-11-29T18:10:36Z" changeset="0"/>
+	<node id="5204346715" lat="34.6804922" lon="33.0432537" version="3" timestamp="2017-11-29T20:47:37Z" changeset="0">
+		<tag k="highway" v="traffic_signals"/>
+		<tag k="traffic_signals" v="signal"/>
+	</node>
+	<node id="5204346716" lat="34.680434" lon="33.0431011" version="1" timestamp="2017-11-01T15:01:17Z" changeset="0"/>
+	<node id="5204346717" lat="34.679726" lon="33.042444" version="1" timestamp="2017-11-01T15:01:17Z" changeset="0"/>
+	<node id="5204346718" lat="34.6796003" lon="33.0422777" version="1" timestamp="2017-11-01T15:01:17Z" changeset="0"/>
+	<node id="5204403368" lat="34.7021931" lon="33.0508234" version="1" timestamp="2017-11-01T15:39:10Z" changeset="0"/>
+	<node id="5224265644" lat="34.7011052" lon="33.0569726" version="1" timestamp="2017-11-12T07:18:02Z" changeset="0"/>
+	<node id="5253063934" lat="34.6792503" lon="33.0369068" version="1" timestamp="2017-11-28T22:33:17Z" changeset="0"/>
+	<node id="5253063936" lat="34.6789424" lon="33.0371555" version="2" timestamp="2017-11-28T22:46:06Z" changeset="0">
+		<tag k="highway" v="traffic_signals"/>
+		<tag k="traffic_signals" v="signal"/>
+	</node>
+	<node id="5253063938" lat="34.6780025" lon="33.0378141" version="1" timestamp="2017-11-28T22:33:17Z" changeset="0">
+		<tag k="highway" v="traffic_signals"/>
+	</node>
+	<node id="5253063940" lat="34.6783734" lon="33.0375505" version="1" timestamp="2017-11-28T22:33:17Z" changeset="0"/>
+	<node id="5253086548" lat="34.6789433" lon="33.0403225" version="1" timestamp="2017-11-28T22:46:06Z" changeset="0"/>
+	<node id="5254387014" lat="34.6853816" lon="33.0547541" version="2" timestamp="2018-03-28T07:44:15Z" changeset="0"/>
+	<node id="5254387015" lat="34.6852912" lon="33.0547946" version="2" timestamp="2018-03-28T07:44:15Z" changeset="0"/>
+	<node id="5254387017" lat="34.6852197" lon="33.0547877" version="2" timestamp="2018-03-28T07:44:15Z" changeset="0"/>
+	<node id="5254387018" lat="34.685185" lon="33.0547787" version="1" timestamp="2017-11-29T17:16:24Z" changeset="0"/>
+	<node id="5254467242" lat="34.6808896" lon="33.0441766" version="1" timestamp="2017-11-29T18:10:35Z" changeset="0"/>
+	<node id="5254731641" lat="34.6805248" lon="33.0433429" version="1" timestamp="2017-11-29T20:47:36Z" changeset="0"/>
+	<node id="5258181096" lat="34.7010488" lon="33.0514934" version="2" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="5258217901" lat="34.7028967" lon="33.0549926" version="1" timestamp="2017-12-01T19:13:45Z" changeset="0"/>
+	<node id="5258233932" lat="34.7008095" lon="33.0562021" version="1" timestamp="2017-12-01T19:21:57Z" changeset="0"/>
+	<node id="5258233935" lat="34.7005873" lon="33.055476" version="1" timestamp="2017-12-01T19:21:57Z" changeset="0"/>
+	<node id="5338588321" lat="34.6866479" lon="33.0536064" version="1" timestamp="2018-01-14T09:45:45Z" changeset="0"/>
+	<node id="5359071694" lat="34.6792538" lon="33.0372827" version="1" timestamp="2018-01-24T14:34:35Z" changeset="0"/>
+	<node id="5510196459" lat="34.6835674" lon="33.0490065" version="1" timestamp="2018-03-28T07:08:35Z" changeset="0"/>
+	<node id="5525196808" lat="34.6858599" lon="33.0543791" version="1" timestamp="2018-04-03T12:08:58Z" changeset="0"/>
+	<node id="5525916687" lat="34.703143" lon="33.0517637" version="1" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="5525916691" lat="34.7014513" lon="33.0513454" version="1" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<node id="5525916692" lat="34.7016031" lon="33.0512554" version="1" timestamp="2018-04-03T17:22:14Z" changeset="0"/>
+	<way id="5043225" version="24" timestamp="2018-01-24T13:47:46Z" changeset="0">
+		<nd ref="5204346718"/>
+		<nd ref="33749752"/>
+		<nd ref="267796056"/>
+		<nd ref="1615986138"/>
+		<nd ref="34204994"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="3"/>
+		<tag k="name" v="Γλαδστώνος"/>
+		<tag k="name:en" v="Gladstónos"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="7054928" version="7" timestamp="2017-11-29T17:12:55Z" changeset="0">
+		<nd ref="222014274"/>
+		<nd ref="54245147"/>
+		<nd ref="1277574336"/>
+		<nd ref="222014677"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="1"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="name" v="Anastasiou Sioukri"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="14526777" version="18" timestamp="2018-01-24T13:50:49Z" changeset="0">
+		<nd ref="142875286"/>
+		<nd ref="267919695"/>
+		<nd ref="218719540"/>
+		<nd ref="314943595"/>
+		<tag k="highway" v="tertiary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Nikodimou Mylona"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="20457257" version="47" timestamp="2018-04-24T20:57:19Z" changeset="0">
+		<nd ref="54245177"/>
+		<nd ref="222014677"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lit" v="no"/>
+		<tag k="maxspeed:type" v="CY:urban"/>
+		<tag k="name" v="Griva Digeni"/>
+		<tag k="oneway" v="no"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="20457306" version="21" timestamp="2017-11-30T00:24:28Z" changeset="0">
+		<nd ref="218573094"/>
+		<nd ref="218575159"/>
+		<nd ref="218575160"/>
+		<tag k="highway" v="tertiary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="1"/>
+		<tag k="name" v="Riga Fereou"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="20457323" version="8" timestamp="2017-11-30T00:24:29Z" changeset="0">
+		<nd ref="218575160"/>
+		<nd ref="5138572486"/>
+		<nd ref="218575526"/>
+		<nd ref="218575529"/>
+		<nd ref="5204346700"/>
+		<tag k="highway" v="tertiary"/>
+		<tag k="lanes" v="1"/>
+		<tag k="name" v="Riga Fereou"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="24648018" version="4" timestamp="2017-11-29T22:54:53Z" changeset="0">
+		<nd ref="267921232"/>
+		<nd ref="267921243"/>
+		<nd ref="267921244"/>
+		<nd ref="267921245"/>
+		<nd ref="267921246"/>
+		<nd ref="267921247"/>
+		<tag k="highway" v="residential"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="name" v="Eptanisou"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="24706084" version="29" timestamp="2018-04-25T07:20:43Z" changeset="0">
+		<nd ref="54245177"/>
+		<nd ref="222021749"/>
+		<nd ref="1274066730"/>
+		<nd ref="1274066743"/>
+		<nd ref="268528658"/>
+		<nd ref="268528598"/>
+		<nd ref="33749768"/>
+		<nd ref="268528602"/>
+		<nd ref="320380392"/>
+		<nd ref="268528618"/>
+		<nd ref="5510196459"/>
+		<nd ref="268533593"/>
+		<nd ref="268528617"/>
+		<nd ref="267874985"/>
+		<nd ref="5109341256"/>
+		<nd ref="267874505"/>
+		<nd ref="33749764"/>
+		<nd ref="267874482"/>
+		<nd ref="267874165"/>
+		<nd ref="267796420"/>
+		<nd ref="33749763"/>
+		<nd ref="267796403"/>
+		<nd ref="218693923"/>
+		<nd ref="5204346712"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="lit" v="yes"/>
+		<tag k="maxspeed:type" v="CY:urban"/>
+		<tag k="name" v="Γλαδστώνος"/>
+		<tag k="name:en" v="Gladstónos"/>
+		<tag k="oneway" v="no"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="24706186" version="16" timestamp="2018-04-03T12:08:58Z" changeset="0">
+		<nd ref="218573106"/>
+		<nd ref="320034779"/>
+		<nd ref="218576731"/>
+		<nd ref="1274259982"/>
+		<nd ref="5525196808"/>
+		<nd ref="5254387014"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="name" v="Lordou Vironos"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+		<tag k="turn:lanes" v="through|right"/>
+	</way>
+	<way id="24719207" version="23" timestamp="2018-03-05T12:24:42Z" changeset="0">
+		<nd ref="5253063938"/>
+		<nd ref="5253063940"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="3"/>
+		<tag k="lanes:backward" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="name" v="Αρχιεπισκόπου Λεοντίου Α΄"/>
+		<tag k="name:en" v="Archbishop Leontios I"/>
+		<tag k="ref" v="B8"/>
+		<tag k="surface" v="asphalt"/>
+		<tag k="turn:lanes:backward" v="left|through"/>
+	</way>
+	<way id="24759697" version="18" timestamp="2018-04-03T17:22:14Z" changeset="0">
+		<nd ref="269062577"/>
+		<nd ref="3276327510"/>
+		<nd ref="3276327512"/>
+		<nd ref="5130553194"/>
+		<nd ref="269062611"/>
+		<nd ref="5130553196"/>
+		<nd ref="269062612"/>
+		<nd ref="5130553199"/>
+		<nd ref="269062613"/>
+		<nd ref="5130553200"/>
+		<nd ref="269062614"/>
+		<nd ref="5525916687"/>
+		<nd ref="269062615"/>
+		<nd ref="269062616"/>
+		<nd ref="269062617"/>
+		<nd ref="1011412683"/>
+		<nd ref="269062618"/>
+		<tag k="highway" v="tertiary"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Elpinikis"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="24759799" version="6" timestamp="2017-12-01T19:13:45Z" changeset="0">
+		<nd ref="269062618"/>
+		<nd ref="269063363"/>
+		<nd ref="269063401"/>
+		<nd ref="5258217901"/>
+		<nd ref="269063354"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Milas"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="24759802" version="8" timestamp="2017-12-01T19:13:45Z" changeset="0">
+		<nd ref="269063363"/>
+		<nd ref="269063396"/>
+		<nd ref="5143659038"/>
+		<nd ref="5143659034"/>
+		<nd ref="5143659035"/>
+		<nd ref="5143659036"/>
+		<tag k="highway" v="residential"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="name" v="Ardanon"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="24759804" version="4" timestamp="2017-12-01T19:13:45Z" changeset="0">
+		<nd ref="269063375"/>
+		<nd ref="269063362"/>
+		<nd ref="269063396"/>
+		<tag k="highway" v="residential"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="name" v="Milas"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="29148381" version="8" timestamp="2017-11-29T22:49:20Z" changeset="0">
+		<nd ref="218730625"/>
+		<nd ref="5143610052"/>
+		<nd ref="60054273"/>
+		<nd ref="218729528"/>
+		<nd ref="60054274"/>
+		<nd ref="267920257"/>
+		<nd ref="60054275"/>
+		<nd ref="267919662"/>
+		<nd ref="60054276"/>
+		<nd ref="218723275"/>
+		<nd ref="60054277"/>
+		<nd ref="267919664"/>
+		<nd ref="4725986040"/>
+		<nd ref="218587578"/>
+		<nd ref="218721915"/>
+		<nd ref="142875286"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Omirou"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="86939590" version="7" timestamp="2017-12-01T19:21:59Z" changeset="0">
+		<nd ref="866813443"/>
+		<nd ref="1011413148"/>
+		<nd ref="5143659048"/>
+		<nd ref="5143659040"/>
+		<nd ref="5224265644"/>
+		<nd ref="1011412475"/>
+		<nd ref="5258233932"/>
+		<nd ref="5130553181"/>
+		<nd ref="5130553180"/>
+		<nd ref="5258233935"/>
+		<nd ref="1011412469"/>
+		<nd ref="5130553179"/>
+		<nd ref="1011412754"/>
+		<nd ref="1011412831"/>
+		<nd ref="4281650074"/>
+		<nd ref="1011413132"/>
+		<nd ref="1011412275"/>
+		<nd ref="269063374"/>
+		<tag k="highway" v="residential"/>
+		<tag k="name" v="Ardanon"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="111348837" version="7" timestamp="2018-01-24T12:21:09Z" changeset="0">
+		<nd ref="218574142"/>
+		<nd ref="218573092"/>
+		<nd ref="218573093"/>
+		<nd ref="5338588321"/>
+		<nd ref="5204346701"/>
+		<tag k="alt_name" v="Saint Nicholas Roundabout"/>
+		<tag k="highway" v="primary"/>
+		<tag k="junction" v="roundabout"/>
+		<tag k="lanes" v="3"/>
+		<tag k="maxspeed" v="30"/>
+		<tag k="name" v="Ayios Nicolaos Junction"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="111411557" version="18" timestamp="2018-01-14T09:43:22Z" changeset="0">
+		<nd ref="1269297193"/>
+		<nd ref="1280047324"/>
+		<nd ref="1904762399"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="3"/>
+		<tag k="name" v="Griva Digeni"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+		<tag k="width" v="10"/>
+	</way>
+	<way id="111605172" version="13" timestamp="2017-11-29T17:12:55Z" changeset="0">
+		<nd ref="1271113668"/>
+		<nd ref="1280047315"/>
+		<nd ref="1280296464"/>
+		<nd ref="1269297193"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="3"/>
+		<tag k="name" v="Griva Digeni"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+		<tag k="width" v="10"/>
+	</way>
+	<way id="111607105" version="6" timestamp="2017-11-29T22:54:53Z" changeset="0">
+		<nd ref="148990531"/>
+		<nd ref="267921348"/>
+		<tag k="highway" v="primary"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="name" v="Spyrou Kyprianou Avenue"/>
+		<tag k="name:el" v="Σπυρου Κυπριανου"/>
+		<tag k="old_name" v="Makedonias"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="111607106" version="4" timestamp="2017-12-07T19:53:28Z" changeset="0">
+		<nd ref="267921232"/>
+		<nd ref="60054271"/>
+		<nd ref="218723937"/>
+		<nd ref="60054272"/>
+		<nd ref="218730625"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Grigori Afxentiou"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="111607110" version="8" timestamp="2018-04-03T17:22:14Z" changeset="0">
+		<nd ref="269062577"/>
+		<nd ref="148990523"/>
+		<nd ref="5130553189"/>
+		<nd ref="148990524"/>
+		<nd ref="269062524"/>
+		<nd ref="148990525"/>
+		<nd ref="5130553185"/>
+		<nd ref="5130553184"/>
+		<nd ref="5204403368"/>
+		<nd ref="148990526"/>
+		<nd ref="269061740"/>
+		<nd ref="148990527"/>
+		<nd ref="5525916692"/>
+		<nd ref="269061816"/>
+		<nd ref="5525916691"/>
+		<nd ref="148990528"/>
+		<nd ref="5258181096"/>
+		<nd ref="269061864"/>
+		<nd ref="269061416"/>
+		<nd ref="148990529"/>
+		<nd ref="269060958"/>
+		<nd ref="269062042"/>
+		<nd ref="267922123"/>
+		<nd ref="148990530"/>
+		<nd ref="269062248"/>
+		<nd ref="1832929593"/>
+		<nd ref="148990531"/>
+		<tag k="highway" v="tertiary"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Stavrou Stylianidi"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="111607113" version="3" timestamp="2017-12-01T18:55:24Z" changeset="0">
+		<nd ref="866813443"/>
+		<nd ref="866813438"/>
+		<nd ref="269062626"/>
+		<nd ref="269062625"/>
+		<nd ref="269063361"/>
+		<nd ref="269063441"/>
+		<nd ref="269062623"/>
+		<nd ref="269062622"/>
+		<tag k="highway" v="tertiary"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="1st October"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="111697192" version="8" timestamp="2016-12-07T18:59:01Z" changeset="0">
+		<nd ref="1275690257"/>
+		<nd ref="1275690265"/>
+		<nd ref="1269297193"/>
+		<tag k="name" v="Kalogries"/>
+		<tag k="bench" v="yes"/>
+		<tag k="highway" v="platform"/>
+		<tag k="public_transport" v="platform"/>
+	</way>
+	<way id="112001563" version="6" timestamp="2017-11-29T23:33:15Z" changeset="0">
+		<nd ref="218575160"/>
+		<nd ref="218596030"/>
+		<nd ref="1271135510"/>
+		<nd ref="218580272"/>
+		<nd ref="218579453"/>
+		<nd ref="218580649"/>
+		<tag k="highway" v="tertiary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Riga Fereou"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="112001567" version="6" timestamp="2018-04-24T20:56:59Z" changeset="0">
+		<nd ref="222014677"/>
+		<nd ref="5109341279"/>
+		<nd ref="5109341280"/>
+		<nd ref="1271113668"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="1"/>
+		<tag k="lit" v="no"/>
+		<tag k="maxspeed:type" v="CY:urban"/>
+		<tag k="name" v="Griva Digeni"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="172289128" version="10" timestamp="2017-12-07T19:53:29Z" changeset="0">
+		<nd ref="59599322"/>
+		<nd ref="1615986133"/>
+		<nd ref="218685789"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="16th June 1943"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="264567477" version="5" timestamp="2018-01-24T14:34:35Z" changeset="0">
+		<nd ref="5253063936"/>
+		<nd ref="2702321882"/>
+		<nd ref="5359071694"/>
+		<tag k="highway" v="service"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="527805278" version="3" timestamp="2017-12-01T18:55:24Z" changeset="0">
+		<nd ref="269062618"/>
+		<nd ref="269062619"/>
+		<nd ref="269062620"/>
+		<nd ref="269062621"/>
+		<nd ref="269062622"/>
+		<tag k="highway" v="tertiary"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Elpinikis"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="537439087" version="4" timestamp="2018-01-24T13:47:46Z" changeset="0">
+		<nd ref="34204994"/>
+		<nd ref="34205177"/>
+		<nd ref="267797012"/>
+		<nd ref="5254467242"/>
+		<nd ref="5204346712"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Γλαδστώνος"/>
+		<tag k="name:en" v="Gladstónos"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="537439088" version="3" timestamp="2018-01-24T13:47:46Z" changeset="0">
+		<nd ref="5204346718"/>
+		<nd ref="33749753"/>
+		<nd ref="59599322"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="4"/>
+		<tag k="name" v="Γλαδστώνος"/>
+		<tag k="name:en" v="Gladstónos"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="537439089" version="5" timestamp="2018-01-24T14:05:18Z" changeset="0">
+		<nd ref="5254731641"/>
+		<nd ref="5204346715"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Γλαδστώνος"/>
+		<tag k="name:en" v="Gladstónos"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="539953432" version="2" timestamp="2017-12-01T19:13:45Z" changeset="0">
+		<nd ref="269063371"/>
+		<nd ref="269063372"/>
+		<nd ref="269063373"/>
+		<nd ref="269063374"/>
+		<nd ref="269063375"/>
+		<tag k="highway" v="residential"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="name" v="Solomos Solomou"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="543401203" version="3" timestamp="2018-03-05T12:24:42Z" changeset="0">
+		<nd ref="5253063940"/>
+		<nd ref="2702321888"/>
+		<nd ref="5253063936"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Αρχιεπισκόπου Λεοντίου Α΄"/>
+		<tag k="name:en" v="Archbishop Leontios I"/>
+		<tag k="ref" v="B8"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="543402311" version="1" timestamp="2017-11-28T22:46:06Z" changeset="0">
+		<nd ref="218685789"/>
+		<nd ref="243234941"/>
+		<nd ref="5253086548"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="3"/>
+		<tag k="lanes:backward" v="2"/>
+		<tag k="lanes:forward" v="1"/>
+		<tag k="name" v="16th June 1943"/>
+		<tag k="surface" v="asphalt"/>
+		<tag k="turn:lanes:backward" v="left;through|right"/>
+	</way>
+	<way id="543402312" version="2" timestamp="2017-11-29T00:08:11Z" changeset="0">
+		<nd ref="5253086548"/>
+		<nd ref="1641958208"/>
+		<nd ref="1278951348"/>
+		<nd ref="2703761226"/>
+		<nd ref="1641958207"/>
+		<nd ref="5253063938"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="16th June 1943"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="543531130" version="2" timestamp="2017-11-29T17:16:25Z" changeset="0">
+		<nd ref="1904762399"/>
+		<nd ref="218570211"/>
+		<nd ref="218593258"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="4"/>
+		<tag k="name" v="Griva Digeni"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+		<tag k="width" v="10"/>
+	</way>
+	<way id="543531432" version="2" timestamp="2018-03-27T16:17:29Z" changeset="0">
+		<nd ref="218593258"/>
+		<nd ref="5204346695"/>
+		<tag k="destination:lanes" v="Makariou III|Riga Ferrou|Griva Digeni|Makariou III"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="4"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="name" v="Griva Digeni"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+		<tag k="turn:lanes" v="left|through|through|right"/>
+		<tag k="width" v="10"/>
+	</way>
+	<way id="543531433" version="2" timestamp="2018-03-28T07:44:15Z" changeset="0">
+		<nd ref="5254387014"/>
+		<nd ref="5254387015"/>
+		<nd ref="5254387017"/>
+		<nd ref="5254387018"/>
+		<nd ref="1274259997"/>
+		<tag k="highway" v="secondary_link"/>
+		<tag k="lanes" v="1"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="543586751" version="1" timestamp="2017-11-29T22:54:51Z" changeset="0">
+		<nd ref="267921348"/>
+		<nd ref="267921247"/>
+		<tag k="highway" v="primary"/>
+		<tag k="is_in" v="Mesa Geitonia-Lsol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="name" v="Spyrou Kyprianou Avenue"/>
+		<tag k="name:el" v="Σπυρου Κυπριανου"/>
+		<tag k="old_name" v="Makedonias"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+		<tag k="turn:lanes" v="left;through|through"/>
+	</way>
+	<way id="543589720" version="1" timestamp="2017-11-29T23:33:12Z" changeset="0">
+		<nd ref="218580649"/>
+		<nd ref="212653165"/>
+		<nd ref="218584251"/>
+		<nd ref="218582951"/>
+		<nd ref="314943595"/>
+		<tag k="highway" v="tertiary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Riga Fereou"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="545327121" version="2" timestamp="2018-01-24T13:47:46Z" changeset="0">
+		<nd ref="5204346712"/>
+		<nd ref="5204346713"/>
+		<nd ref="5204346714"/>
+		<nd ref="5254731641"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Γλαδστώνος"/>
+		<tag k="name:en" v="Gladstónos"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555429842" version="2" timestamp="2018-01-24T12:40:01Z" changeset="0">
+		<nd ref="218573103"/>
+		<nd ref="218573104"/>
+		<tag k="alt_name" v="Saint Nicholas Roundabout"/>
+		<tag k="highway" v="primary"/>
+		<tag k="junction" v="roundabout"/>
+		<tag k="lanes" v="3"/>
+		<tag k="maxspeed" v="30"/>
+		<tag k="name" v="Ayios Nicolaos Junction"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555429843" version="1" timestamp="2018-01-24T12:03:19Z" changeset="0">
+		<nd ref="5204346695"/>
+		<nd ref="218574142"/>
+		<tag k="alt_name" v="Saint Nicholas Roundabout"/>
+		<tag k="highway" v="primary"/>
+		<tag k="junction" v="roundabout"/>
+		<tag k="lanes" v="3"/>
+		<tag k="maxspeed" v="30"/>
+		<tag k="name" v="Ayios Nicolaos Junction"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555432226" version="2" timestamp="2018-01-24T12:40:01Z" changeset="0">
+		<nd ref="5204346701"/>
+		<nd ref="218573094"/>
+		<tag k="alt_name" v="Saint Nicholas Roundabout"/>
+		<tag k="highway" v="primary"/>
+		<tag k="junction" v="roundabout"/>
+		<tag k="lanes" v="3"/>
+		<tag k="maxspeed" v="30"/>
+		<tag k="name" v="Ayios Nicolaos Junction"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555432227" version="1" timestamp="2018-01-24T12:21:09Z" changeset="0">
+		<nd ref="218573098"/>
+		<nd ref="218573100"/>
+		<nd ref="218573101"/>
+		<nd ref="218573103"/>
+		<tag k="alt_name" v="Saint Nicholas Roundabout"/>
+		<tag k="highway" v="primary"/>
+		<tag k="junction" v="roundabout"/>
+		<tag k="lanes" v="3"/>
+		<tag k="maxspeed" v="30"/>
+		<tag k="name" v="Ayios Nicolaos Junction"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555437804" version="1" timestamp="2018-01-24T12:40:00Z" changeset="0">
+		<nd ref="5204346700"/>
+		<nd ref="218573098"/>
+		<tag k="alt_name" v="Saint Nicholas Roundabout"/>
+		<tag k="highway" v="primary"/>
+		<tag k="junction" v="roundabout"/>
+		<tag k="lanes" v="3"/>
+		<tag k="maxspeed" v="30"/>
+		<tag k="name" v="Ayios Nicolaos Junction"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555437808" version="1" timestamp="2018-01-24T12:40:01Z" changeset="0">
+		<nd ref="218573104"/>
+		<nd ref="218573105"/>
+		<nd ref="1904762437"/>
+		<nd ref="5204346699"/>
+		<nd ref="218573106"/>
+		<tag k="alt_name" v="Saint Nicholas Roundabout"/>
+		<tag k="highway" v="primary"/>
+		<tag k="junction" v="roundabout"/>
+		<tag k="lanes" v="3"/>
+		<tag k="maxspeed" v="30"/>
+		<tag k="name" v="Ayios Nicolaos Junction"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555437811" version="1" timestamp="2018-01-24T12:40:01Z" changeset="0">
+		<nd ref="1274259997"/>
+		<nd ref="1269297190"/>
+		<nd ref="2742299470"/>
+		<nd ref="2742299474"/>
+		<nd ref="1274259990"/>
+		<nd ref="1274447897"/>
+		<nd ref="1274298153"/>
+		<nd ref="54245151"/>
+		<nd ref="268533592"/>
+		<nd ref="3098179301"/>
+		<nd ref="218592791"/>
+		<nd ref="218592796"/>
+		<nd ref="222014274"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="maxspeed" v="50"/>
+		<tag k="name" v="Anastasiou Sioukri"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555452853" version="1" timestamp="2018-01-24T14:05:18Z" changeset="0">
+		<nd ref="5204346715"/>
+		<nd ref="5204346716"/>
+		<nd ref="5204346717"/>
+		<nd ref="5204346718"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Γλαδστώνος"/>
+		<tag k="name:en" v="Gladstónos"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555457635" version="2" timestamp="2018-03-05T12:24:42Z" changeset="0">
+		<nd ref="5253063936"/>
+		<nd ref="5253063934"/>
+		<tag k="highway" v="secondary"/>
+		<tag k="is_in" v="Limassol"/>
+		<tag k="lanes" v="2"/>
+		<tag k="name" v="Αρχιεπισκόπου Λεοντίου Α΄"/>
+		<tag k="name:en" v="Archbishop Leontios I"/>
+		<tag k="ref" v="B8"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<way id="555459120" version="1" timestamp="2018-01-24T14:34:35Z" changeset="0">
+		<nd ref="5359071694"/>
+		<nd ref="2702321889"/>
+		<nd ref="5253063934"/>
+		<tag k="highway" v="service"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="surface" v="asphalt"/>
+	</way>
+	<relation id="1571068" version="32" timestamp="2018-03-05T12:23:37Z" changeset="0">
+		<member type="node" ref="1269297193" role="stop"/>
+		<member type="node" ref="1271135510" role="stop"/>
+		<member type="way" ref="543589720" role=""/>
+		<member type="way" ref="112001563" role=""/>
+		<member type="way" ref="20457306" role="forward"/>
+		<member type="way" ref="555432226" role="forward"/>
+		<member type="way" ref="111348837" role="forward"/>
+		<member type="way" ref="555429843" role=""/>
+		<member type="way" ref="543531432" role="forward"/>
+		<member type="way" ref="543531130" role="forward"/>
+		<member type="way" ref="111411557" role="forward"/>
+		<member type="way" ref="111697192" role="platform"/>
+		<member type="way" ref="14526777" role=""/>
+		<member type="way" ref="29148381" role=""/>
+		<member type="way" ref="111607106" role=""/>
+		<member type="way" ref="24648018" role=""/>
+		<member type="way" ref="543586751" role=""/>
+		<member type="way" ref="111607105" role=""/>
+		<member type="way" ref="111607110" role=""/>
+		<member type="way" ref="24759697" role=""/>
+		<member type="way" ref="527805278" role=""/>
+		<member type="way" ref="111607113" role=""/>
+		<member type="way" ref="86939590" role=""/>
+		<member type="way" ref="539953432" role=""/>
+		<member type="way" ref="24759804" role=""/>
+		<member type="way" ref="24759802" role=""/>
+		<member type="way" ref="24759799" role=""/>
+		<member type="way" ref="111605172" role="forward"/>
+		<member type="way" ref="112001567" role="forward"/>
+		<member type="way" ref="20457257" role="forward"/>
+		<member type="way" ref="24706084" role="backward"/>
+		<member type="way" ref="537439087" role="forward"/>
+		<member type="way" ref="5043225" role="forward"/>
+		<member type="way" ref="537439088" role="backward"/>
+		<member type="way" ref="172289128" role="backward"/>
+		<member type="way" ref="543402311" role="backward"/>
+		<member type="way" ref="543402312" role="backward"/>
+		<member type="way" ref="24719207" role="backward"/>
+		<member type="way" ref="543401203" role="backward"/>
+		<member type="way" ref="555457635" role="backward"/>
+		<member type="way" ref="555459120" role="forward"/>
+		<member type="node" ref="3891118256" role="start_stop"/>
+		<tag k="from" v="Kalogries"/>
+		<tag k="name" v="11: Λεοντίου, Παλαιό Νοσοκομείο - Super Home Center"/>
+		<tag k="operator" v="Ε.Μ.Ε.Λ."/>
+		<tag k="ref" v="11"/>
+		<tag k="route" v="bus"/>
+		<tag k="to" v="Super Home Center"/>
+		<tag k="type" v="route"/>
+	</relation>
+	<relation id="1572253" version="24" timestamp="2018-03-05T12:23:36Z" changeset="0">
+		<member type="node" ref="1271135510" role="stop"/>
+		<member type="node" ref="1269297190" role="stop"/>
+		<member type="way" ref="24759799" role=""/>
+		<member type="way" ref="24759802" role=""/>
+		<member type="way" ref="24759804" role=""/>
+		<member type="way" ref="539953432" role=""/>
+		<member type="way" ref="86939590" role=""/>
+		<member type="way" ref="111607113" role=""/>
+		<member type="way" ref="24759697" role=""/>
+		<member type="way" ref="527805278" role=""/>
+		<member type="way" ref="111607110" role=""/>
+		<member type="way" ref="111607105" role=""/>
+		<member type="way" ref="543586751" role=""/>
+		<member type="way" ref="24648018" role=""/>
+		<member type="way" ref="111607106" role=""/>
+		<member type="way" ref="29148381" role=""/>
+		<member type="way" ref="14526777" role=""/>
+		<member type="way" ref="555429843" role=""/>
+		<member type="way" ref="543589720" role=""/>
+		<member type="way" ref="112001563" role=""/>
+		<member type="way" ref="20457323" role="forward"/>
+		<member type="way" ref="555437804" role="forward"/>
+		<member type="way" ref="555432227" role="forward"/>
+		<member type="way" ref="555429842" role="forward"/>
+		<member type="way" ref="555437808" role="forward"/>
+		<member type="way" ref="24706186" role="forward"/>
+		<member type="way" ref="543531433" role="forward"/>
+		<member type="way" ref="555437811" role="forward"/>
+		<member type="way" ref="7054928" role="forward"/>
+		<member type="way" ref="20457257" role="backward"/>
+		<member type="way" ref="24706084" role="forward"/>
+		<member type="way" ref="545327121" role="forward"/>
+		<member type="way" ref="537439089" role="forward"/>
+		<member type="way" ref="555452853" role="forward"/>
+		<member type="way" ref="537439088" role="forward"/>
+		<member type="way" ref="172289128" role="forward"/>
+		<member type="way" ref="543402311" role="forward"/>
+		<member type="way" ref="543402312" role="forward"/>
+		<member type="way" ref="24719207" role="forward"/>
+		<member type="way" ref="543401203" role="forward"/>
+		<member type="way" ref="264567477" role="forward"/>
+		<member type="node" ref="3891118256" role="stop"/>
+		<tag k="from" v="Super Home Center"/>
+		<tag k="name" v="11: Super Home Center - Λεοντίου, Παλαιό Νοσοκομείο"/>
+		<tag k="operator" v="Ε.Μ.Ε.Λ."/>
+		<tag k="ref" v="11"/>
+		<tag k="route" v="bus"/>
+		<tag k="to" v="Kalogries"/>
+		<tag k="type" v="route"/>
+	</relation>
+	<relation id="1572254" version="2" timestamp="2011-05-04T15:46:19Z" changeset="0">
+		<member type="relation" ref="1571068" role=""/>
+		<member type="relation" ref="1572253" role=""/>
+		<tag k="ref" v="11"/>
+		<tag k="name" v="Bus 11"/>
+		<tag k="type" v="route_master"/>
+		<tag k="colour" v="#CCCC00"/>
+		<tag k="network" v="Limassol Buses"/>
+		<tag k="operator" v="EMEL"/>
+		<tag k="route_master" v="bus"/>
+		<tag k="name" v="TEST"/>
+	</relation>
+</osm>
