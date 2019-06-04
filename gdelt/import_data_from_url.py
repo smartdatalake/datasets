@@ -1,7 +1,8 @@
 import pandas as pd
 from urllib.request import urlopen
-from gdelt_networkx import NetworkxImporter
+from gdelt_networkx import GDELT_NetworkxImporter
 from gdelt_downloader import Downloader
+
 
 url_prefix = 'http://data.gdeltproject.org/gdeltv2/'
 url = url_prefix+'masterfilelist.txt'
@@ -14,7 +15,7 @@ links = links[(links >= url_prefix+'20180115') &
 d = Downloader(links)
 df = d.download_data()
 
-nim = NetworkxImporter()
+nim = GDELT_NetworkxImporter()
 nim.create_graph(df)
 nim.print_statistics()
 nim.export('gdelt_graph.xml')

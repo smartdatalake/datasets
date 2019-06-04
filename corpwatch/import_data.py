@@ -1,13 +1,9 @@
-
-
 import pandas as pd
-from corpwatch_networkx import NetworkxImporter
+from corpwatch_networkx import CW_NetworkxImporter
 
-chunksize = 100000
+chunksize = 10000
 
-print("Creating Constraints")
-
-nim = NetworkxImporter()
+nim = CW_NetworkxImporter()
 
 print("Creating Industries")
 chunks = pd.read_csv('./data/sic_codes.csv', sep='\t', chunksize=chunksize)
@@ -52,7 +48,6 @@ for i, df in enumerate(chunks):
     print("\tChunk {}".format(i))
     df = df[df.most_recent == 1].reset_index(drop=True)
     nim.create_locations(df.fillna(""))
-    break
 
 print("Creating Filers")
 chunks = pd.read_csv('./data/filers.csv', sep='\t', chunksize=chunksize)

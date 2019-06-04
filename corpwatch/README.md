@@ -2,7 +2,7 @@
 
 ## Overview
 
-This page provides instructions and source code for producing a graph of companies and associated information from data obtained from [CorpWatch](https://corpwatch.org/).
+This page provides instructions and source code for producing a Heterogeneous Information Network of companies and associated information from data obtained from [CorpWatch](https://corpwatch.org/).
 
 ## Instructions
 

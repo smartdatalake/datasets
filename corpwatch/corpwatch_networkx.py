@@ -1,63 +1,17 @@
-
+from util.networkx_importer import NetworkxImporter
 from numpy import nan
 import pandas as pd
 import networkx as nx
-from collections import Counter
-import re
+
 
 def isNaN(s):
     return s != s
 
 
-class NetworkxImporter():
+class CW_NetworkxImporter(NetworkxImporter):
 
     def __init__(self):
-        self.graph = nx.MultiDiGraph()
-
-    def __get_nodes_ids(self, attribute, value):
-        return [key for key in self.graph.nodes()
-                if attribute in self.graph.nodes[key].keys()
-                and self.graph.nodes[key][attribute] == value
-                and 'source' in self.graph.nodes[key].keys()
-                and self.graph.nodes[key]['source'] == 'Corpwatch']
-
-    def __get_edges_ids(self, attribute, value):
-        return [key for key in self.graph.edges()
-                if self.graph.edge[key][attribute] == value
-                and self.graph.edges[key]['source'] == 'Corpwatch']
-
-    def __get_nodes_statistics(self, val, choice=0):
-        if choice == 0:
-            self.no_nodes = Counter([self.graph.nodes[key]['nlabel']
-                                    for key in self.graph.nodes()
-                                    if 'nlabel' in self.graph.nodes[key].keys()
-                                    and 'source' in self.graph.nodes[key].keys()
-                                    and self.graph.nodes[key]['source'] == 'Corpwatch'                                        
-                                     ])
-        return self.no_nodes[val]
-
-    def __get_edges_statistics(self, val, _from=None, _to=None, choice=0):
-        if choice == 0:
-            self.no_edges = Counter(["{}_{}_{}".format(
-                                self.graph.edges[edge]['elabel'],
-                                self.graph.nodes[edge[0]]['nlabel'],
-                                self.graph.nodes[edge[1]]['nlabel'])
-                                for edge in self.graph.edges
-                                if 'elabel' in self.graph.edges[edge].keys()
-                                and 'source' in self.graph.edges[edge].keys()
-                                and self.graph.edges[edge]['source'] == 'Corpwatch'                                
-                                ])
-        return self.no_edges["{}_{}_{}".format(val, _from, _to)]
-
-    def __get_nodes_values(self, attr):
-        return set([self.graph.nodes[node][attr]
-                    for node in self.graph.nodes()])
-
-    def __get_edges_values(self, attr):
-        return set([(self.graph.edges[edge][attr],
-                     self.graph.nodes[edge[0]]['nlabel'],
-                     self.graph.nodes[edge[1]]['nlabel'])
-                    for edge in self.graph.edges.keys()])
+        NetworkxImporter.__init__(self, 'Corpwatch')
 
     def create_companies(self, df):
         for index, row in df.iterrows():
@@ -230,43 +184,3 @@ class NetworkxImporter():
         if prefix+'latitude' in row.index:
             return (row[prefix+'latitude'], row[prefix+'longitude'])
         return (nan, nan)
-
-    def print_statistics(self):
-        print("Statistics:")
-        print("\tTotal Corpwatch Nodes: {:,}".format(
-                self.graph.number_of_nodes()))
-
-        nodes = self.__get_nodes_values('nlabel')
-        for i, node in enumerate(nodes):
-            print("\t\tCorpwatch {} Nodes: {:,}".format(node,
-                            self.__get_nodes_statistics(node, i)))
-
-        print("\tTotal Corpwatch Edges: {:,}".format(
-                self.graph.number_of_edges()))
-
-        edges = self.__get_edges_values('elabel')
-        for i, (elabel, nlabel1, nlabel2) in enumerate(edges):
-            print("\t\tCorpwatch {}({},{}) Edges: {:,}".format(elabel,
-                      nlabel1, nlabel2, self.__get_edges_statistics(
-                              elabel, nlabel1, nlabel2, i)))
-
-    def export(self, path, format='gpickle'):
-        if format == 'gpickle':
-            nx.write_gpickle(self.graph, path)
-        elif format == 'graphml':
-            # necessary cleaning
-            for node in self.graph.nodes:
-                for key in self.graph.nodes[node].keys():
-                    if isinstance(self.graph.nodes[node][key], list):
-                        self.graph.nodes[node][key] = '<<;>>'.join(
-                                self.graph.nodes[node][key])
-                    elif isinstance(self.graph.nodes[node][key], set):
-                        self.graph.nodes[node][key] = '<<;>>'.join(
-                                self.graph.nodes[node][key])
-                    if isinstance(self.graph.nodes[node][key], str):
-                        self.graph.nodes[node][key] = re.sub(
-                                b'[\x00-\x10]', b'',
-                                self.graph.nodes[node][key].encode(
-                                        'utf-8')).decode('utf-8')
-
-            nx.write_graphml(self.graph, path, 'utf-8')

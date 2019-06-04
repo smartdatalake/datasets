@@ -1,6 +1,12 @@
 import pandas as pd
 import networkx as nx
-from collections import Counter
+from util.networkx_importer import NetworkxImporter
+import yaml
+from neo4j import GraphDatabase, exceptions
+import py_stringmatching as sm
+import py_stringsimjoin as ssj
+from scipy.spatial import distance
+from sklearn.cluster import KMeans
 import re
 
 
@@ -8,57 +14,152 @@ def isNaN(s):
     return s != s
 
 
-class NetworkxImporter():
+class GDELT_NetworkxImporter(NetworkxImporter):
 
     def __init__(self):
-        self.graph = nx.MultiDiGraph()
+        NetworkxImporter.__init__(self, 'GDELT')
+        with open("../util/neo4j_creds.yaml", 'r') as stream:
+            try:
+                creds = yaml.safe_load(stream)
+            except yaml.YAMLError as exc:
+                print(exc)
+            self._driver = GraphDatabase.driver(creds["uri"],
+                                                auth=(creds["user"],
+                                                      creds["password"]))
+            self.session = self._driver.session()
 
-    def __get_nodes_ids(self, attribute, value):
-        return [key for key in self.graph.nodes()
-                if attribute in self.graph.nodes[key].keys()
-                and self.graph.nodes[key][attribute] == value
-                and 'source' in self.graph.nodes[key].keys()
-                and self.graph.nodes[key]['source'] == 'GDELT']
+    def close(self):
+        self._driver.close()
 
-    def __get_edges_ids(self, attribute, value):
-        return [key for key in self.graph.edges()
-                if self.graph.edge[key][attribute] == value
-                and self.graph.edges[key]['source'] == 'GDELT']
+    # locations
 
-    def __get_nodes_statistics(self, val, choice=0):
-        if choice == 0:
-            self.no_nodes = Counter([self.graph.nodes[key]['nlabel']
-                                    for key in self.graph.nodes.keys()
-                                    if 'nlabel' in self.graph.nodes[key].keys()
-                                    and 'source' in self.graph.nodes[key].keys()
-                                    and self.graph.nodes[key]['source'] ==
-                                    'GDELT'])
-        return self.no_nodes[val]
+    def fetch_locations(self):
+        return pd.DataFrame(self.session.run(
+                "MATCH (n:Location {source:'Corpwatch'}) "
+                "WHERE EXISTS(n.latitude) "
+                "RETURN n.id as id, n.latitude as lat, n.longitude as lng"
+                ).data()).set_index('id')
 
-    def __get_edges_statistics(self, val, _from=None, _to=None, choice=0):
-        if choice == 0:
-            self.no_edges = Counter(["{}_{}_{}".format(
-                                self.graph.edges[edge]['elabel'],
-                                self.graph.nodes[edge[0]]['nlabel'],
-                                self.graph.nodes[edge[1]]['nlabel'])
-                                for edge in self.graph.edges
-                                if 'elabel' in self.graph.edges[edge].keys()
-                                and 'source' in self.graph.edges[edge].keys()
-                                and self.graph.edges[edge]['source'] == 'GDELT'
-                                ])
-        return self.no_edges["{}_{}_{}".format(val, _from, _to)]
+    def filter_similar_locations(self, A, B, lim, opt):
+        C = []
+        if opt:
+            n_clusters = int(B.shape[0] * 0.1)
+            km = KMeans(n_clusters=n_clusters, random_state=1924)
+            X = km.fit_predict(B)
+            for index, a in A.iteritems():
+                keep = False
+                Y = pd.Series(km.predict(a))
+                for index1, row1 in enumerate(a):
+                    for index2, row2 in B[X == Y[index1]].iterrows():
+                        if distance.euclidean(row1, row2) < lim:
+                            C += [index]
+                            keep = True
+                            break
+                    if keep:
+                        break
+        else:
+            for index, a in A.iteritems():
+                keep = False
+                for index1, row1 in enumerate(a):
+                    for index2, row2 in B.iterrows():
+                        if distance.euclidean(row1, row2) < lim:
+                            C += [index]
+                            keep = True
+                            break
+                    if keep:
+                        break
+        return set(C)
 
-    def __get_nodes_values(self, attr):
-        return set([self.graph.nodes[node][attr]
-                    for node in self.graph.nodes()])
+    def filter_locations(self, df, lim, opt):
+        A = df.ENHANCEDLOCATIONS.dropna().apply(lambda x: [
+                y.split('#')[5:7] for y in x.split(';')])
+        A = A.apply(lambda x: [[float(z) for z in y] for y in x])
 
-    def __get_edges_values(self, attr):
-        return set([(self.graph.edges[edge][attr],
-                     self.graph.nodes[edge[0]]['nlabel'],
-                     self.graph.nodes[edge[1]]['nlabel'])
-                    for edge in self.graph.edges.keys()])
+        B = self.fetch_locations()
 
-    def create_graph(self, df):
+        return self.filter_similar_locations(A, B, lim, opt)
+
+    # Person
+
+    def fetch_person(self):
+        return pd.DataFrame(self.session.run(
+                "MATCH (n:Person {source:'Wikidata'}) WHERE EXISTS(n.label) "
+                "RETURN n.id as id, n.label as name").data()
+                )
+
+    def filter_person(self, df, lim):
+        A = df.ENHANCEDPERSONS.dropna().apply(lambda x: list(set([
+                y.split(',')[0].lower() for y in x.split(';')])))
+        A = A.apply(pd.Series).stack()
+        A.index = A.index.map(lambda i: "{}_{}".format(i[0], i[1]))
+        A = A.reset_index()
+        A.columns = ['id', 'name']
+
+        B = self.fetch_person()
+        B.name = B.name.str.replace(r'_+', ' ').str.lower()
+
+        qg3_tok = sm.QgramTokenizer(qval=3)
+        C = ssj.jaccard_join(A, B, 'id', 'id', 'name', 'name', qg3_tok, lim,
+                             l_out_attrs=['name'], r_out_attrs=['name'],
+                             show_progress=False)
+
+        return set(C.l_id.apply(lambda x: int(x.split("_")[0])))
+
+    # Organization
+
+    def fetch_organization(self):
+        A = pd.DataFrame(self.session.run(
+                "MATCH (n:Company {source:'Corpwatch'}) "
+                "RETURN n.id as id, n.company_name as name").data()
+                )
+
+        B = pd.DataFrame(self.session.run(
+                "MATCH (n:Organization {source:'Wikidata'}) "
+                "WHERE EXISTS(n.label) "
+                "RETURN n.id as id, n.label as name").data()
+                )
+        return pd.concat([A, B]).reset_index(drop=True)
+
+    def filter_organization(self, df, lim):
+        A = df.ENHANCEDORGANIZATIONS.dropna().apply(lambda x: list(set([
+                y.split(',')[0].lower() for y in x.split(';')])))
+        A = A.apply(pd.Series).stack()
+        A.index = A.index.map(lambda i: "{}_{}".format(i[0], i[1]))
+        A = A.reset_index()
+        A.columns = ['id', 'name']
+
+        B = self.fetch_organization()
+        B.name = B.name.str.replace(r'_+', ' ').str.lower()
+
+        qg3_tok = sm.QgramTokenizer(qval=3)
+        C = ssj.jaccard_join(A, B, 'id', 'id', 'name', 'name', qg3_tok, lim,
+                             l_out_attrs=['name'], r_out_attrs=['name'],
+                             show_progress=False)
+
+        return set(C.l_id.apply(lambda x: int(x.split("_")[0])))
+
+    def filter_df(self, df, filter_lim):
+        (lim, filters, opt) = filter_lim
+        C1 = set()
+        C2 = set()
+        C3 = set()
+        if re.search('1..', filters):
+            print('\t\tFiltering Locations')
+            C1 = self.filter_locations(df, lim, opt)
+        if re.search('.1.', filters):
+            print('\t\tFiltering Person')
+            C2 = self.filter_person(df, lim)
+        if re.search('..1', filters):
+            print('\t\tFiltering Organization')
+            C3 = self.filter_organization(df, lim)
+        return list(C1 | C2 | C3)
+
+    def create_graph(self, df, filter_lim=None):
+        if filter_lim is not None:
+            print('\tFiltering DataFrame')
+            ind = self.filter_df(df, filter_lim)
+            print("{} rows passed out of {}".format(len(ind), df.shape[0]))
+            df = df.loc[ind, :]
 
         for no, (index, row) in enumerate(df.iterrows()):
             if df.shape[0] > 1000:
@@ -156,43 +257,3 @@ class NetworkxImporter():
                                         elabel='MENTIONS', source='GDELT',
                                         position=row2['Position'])
 
-    def print_statistics(self):
-        print("Statistics:")
-
-        print("\tTotal GDELT Nodes: {:,}".format(
-                self.graph.number_of_nodes()))
-
-        nodes = self.__get_nodes_values('nlabel')
-        for i, node in enumerate(nodes):
-            print("\t\tGDELT {} Nodes: {:,}".format(node,
-                                        self.__get_nodes_statistics(node, i)))
-
-        print("\tTotal GDELT Edges: {:,}".format(
-                self.graph.number_of_edges()))
-
-        edges = self.__get_edges_values('elabel')
-        for i, (elabel, nlabel1, nlabel2) in enumerate(edges):
-            print("\t\tGDELT {}({},{}) Edges: {:,}".format(elabel,
-                      nlabel1, nlabel2, self.__get_edges_statistics(
-                              elabel, nlabel1, nlabel2, i)))
-
-    def export(self, path, format='gpickle'):
-        if format == 'gpickle':
-            nx.write_gpickle(self.graph, path)
-        elif format == 'graphml':
-            # necessary cleaning
-            for node in self.graph.nodes:
-                for key in self.graph.nodes[node].keys():
-                    if isinstance(self.graph.nodes[node][key], list):
-                        self.graph.nodes[node][key] = '<<;>>'.join(
-                                self.graph.nodes[node][key])
-                    elif isinstance(self.graph.nodes[node][key], set):
-                        self.graph.nodes[node][key] = '<<;>>'.join(
-                                self.graph.nodes[node][key])
-                    if isinstance(self.graph.nodes[node][key], str):
-                        self.graph.nodes[node][key] = re.sub(
-                                b'[\x00-\x10]', b'',
-                                self.graph.nodes[node][key].encode(
-                                        'utf-8')).decode('utf-8')
-
-            nx.write_graphml(self.graph, path, 'utf-8')

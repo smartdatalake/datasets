@@ -2,15 +2,15 @@
 
 ## Overview
 
-This page provides instructions and source code for producing a graph of news articles and associated information about mentioned organizations and persons from data obtained from the [GDELT](https://www.gdeltproject.org/) project.
+This page provides instructions and source code for producing a Heterogeneous Information Network of news articles and associated information about mentioned organizations and persons from data obtained from the [GDELT](https://www.gdeltproject.org/) project.
 
 ## Instructions
 
 There are two ways to import data from GDELT:
 
-**A)** Run the script `import_data_from_url.py`, which downloads the list of all available files and the user can then select which ones to fetch. Indicatively, we have downloaded data from the 3rd week (15.Jan - 21.Jan) of 2018. Then, the data is imported into a [NetworkX](https://networkx.github.io/) graph via the NetworkxImporter class, found in the `gdelt_networkx.py` module.
+**A)** Run the script `import_data_from_url.py`, which downloads the list of all available files and the user can then select which ones to fetch. Indicatively, we have downloaded data for a 3-day period (15.Jan - 17.Jan) of 2018. Then, the data is imported into a [NetworkX](https://networkx.github.io/) graph via the GDELT_NetworkxImporter class, found in the `gdelt_networkx.py` module.
 
-**B)** Run the script `import_data_from_file.py`, where all the data has been already fetched and stored locally. This is done by using a bash script, `fetch_data.sh`. Afterwards, the data is imported into a [NetworkX](https://networkx.github.io/) graph as in the previous case, via the NetworkxImporter.
+**B)** Run the script `import_data_from_file.py`, where all the data has been already fetched and stored locally. This is done by using a bash script, `fetch_data.sh`. Afterwards, the data is imported into a [NetworkX](https://networkx.github.io/) graph as in the previous case, via the GDELT_NetworkxImporter.
 
 
 ## Data description
