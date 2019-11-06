@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     nim.print_statistics()
     t2 = time()
-    nim.export_gpickle('./data/{}_gpickle.gpickle'.format(date))
+    nim.export_gpickle('./data/{}_graph.gpickle'.format(date))
     t3 = time()
     print('Elapsed {:.2f} sec'.format(t3-t2))
     nim.export_filtered_csv('./data/{}_filtered.csv'.format(date))

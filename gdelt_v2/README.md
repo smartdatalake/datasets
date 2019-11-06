@@ -8,7 +8,7 @@ This page provides instructions and source code for producing a Heterogeneous In
 
 To download data from GDELT, run the bash script `fetch_data.sh`, with argument the desired date with no dashes. For example, to download the data from 1st April, 2019, run the command `./fetch_data.sh 20190401`. This will download all .zip files from this day, unzip them and combine them in one big file, named `20190401_raw.txt`.
 
-To import the data into a [NetworkX](https://networkx.github.io/) graph, run the `extract_data.py` with the same argument. For example, to import the data from 1st April, 2019, run the command `python extract_data.py 20190401`. This will create two files, a filtered version of the previous raw file named `20190401_filtered.csv` and a gpickle for the Networkx graph named `20190401_gpickle.gpickle`.
+To import the data into a [NetworkX](https://networkx.github.io/) graph, run the `extract_data.py` with the same argument. For example, to import the data from 1st April, 2019, run the command `python extract_data.py 20190401`. This will create two files, a filtered version of the previous raw file named `20190401_filtered.csv` and a gpickle for the Networkx graph named `20190401_graph.gpickle`.
 
 ## Data description
 
@@ -53,6 +53,6 @@ Each filtered .csv file has no header, since the user might want to concatenate 
    - name: The full name of the location.
    - cc: Country Code of the location.
    - lat: Latitude of the location.
-   - long: Longitude of the location.
+   - lon: Longitude of the location.
 
 More information about the GDELT data can be found [here](http://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf).
